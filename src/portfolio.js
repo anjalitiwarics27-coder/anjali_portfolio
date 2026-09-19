@@ -121,7 +121,7 @@ const educationInfo = {
   schools: [
     {
       schoolName: "IILM University",
-      logo: require("./assets/images/stanfordLogo.png"),
+      logo: require("./assets/images/logo/logo.jpeg"),
       subHeader: "Bachelor of Technology in Computer Science and Engineering",
       duration: "2023 - 2027",
       desc: "CGPA: 9.3 | Focused on core Computer Science, Data Structures & Algorithms, AI/ML, and Software Engineering principles.",
