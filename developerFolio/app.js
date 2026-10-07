@@ -93,7 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", highlightNavOnScroll);
 
   // 5. Skills Category Filter
-  const skillFilterBtns = document.querySelectorAll("#skill-filter-tabs .filter-btn");
+  const skillFilterBtns = document.querySelectorAll(
+    "#skill-filter-tabs .filter-btn"
+  );
   const skillCards = document.querySelectorAll(".skill-card");
 
   skillFilterBtns.forEach(btn => {
@@ -104,7 +106,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const filterValue = btn.getAttribute("data-filter");
 
       skillCards.forEach(card => {
-        if (filterValue === "all" || card.getAttribute("data-category") === filterValue) {
+        if (
+          filterValue === "all" ||
+          card.getAttribute("data-category") === filterValue
+        ) {
           card.classList.remove("hidden");
         } else {
           card.classList.add("hidden");
@@ -142,7 +147,14 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "AI-Based Doctor-Patient Appointment System",
       category: "Healthcare AI & Full-Stack Platform",
       period: "Jun – Aug 2026",
-      tech: ["Python", "Machine Learning", "Flask", "MySQL", "HTML5/CSS3", "REST APIs"],
+      tech: [
+        "Python",
+        "Machine Learning",
+        "Flask",
+        "MySQL",
+        "HTML5/CSS3",
+        "REST APIs"
+      ],
       summary:
         "An intelligent appointment booking platform designed to bridge the gap between patient symptoms and specialized medical care, automating doctor scheduling and availability management.",
       features: [
@@ -157,7 +169,13 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Library Management System (AI-Enhanced)",
       category: "System Software & File Architecture",
       period: "March 2025",
-      tech: ["C Language", "File Handling", "AI Heuristics", "Data Structures", "CRUD Operations"],
+      tech: [
+        "C Language",
+        "File Handling",
+        "AI Heuristics",
+        "Data Structures",
+        "CRUD Operations"
+      ],
       summary:
         "A high-performance, file-based Library Management System developed in C Language that replaces paper logging with structured binary file management and an intelligent recommendation heuristic.",
       features: [
@@ -198,27 +216,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
       modalContent.innerHTML = `
         <div style="margin-bottom: 16px;">
-          <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.05em;">${project.category} (${project.period})</span>
-          <h2 style="font-size: 1.5rem; margin-top: 4px; margin-bottom: 12px;">${project.title}</h2>
-          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">${project.summary}</p>
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.05em;">${
+            project.category
+          } (${project.period})</span>
+          <h2 style="font-size: 1.5rem; margin-top: 4px; margin-bottom: 12px;">${
+            project.title
+          }</h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">${
+            project.summary
+          }</p>
         </div>
 
         <div style="margin-bottom: 24px;">
           <h4 style="font-size: 1rem; margin-bottom: 10px; color: var(--text-primary);"><i class="fa-solid fa-list-check" style="color: var(--accent-primary); margin-right: 6px;"></i> Technical Highlights:</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
-            ${project.features.map(f => `<li style="position: relative; padding-left: 20px; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;"><span style="position: absolute; left: 0; color: var(--accent-emerald);">✔</span>${f}</li>`).join("")}
+            ${project.features
+              .map(
+                f =>
+                  `<li style="position: relative; padding-left: 20px; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;"><span style="position: absolute; left: 0; color: var(--accent-emerald);">✔</span>${f}</li>`
+              )
+              .join("")}
           </ul>
         </div>
 
         <div style="margin-bottom: 28px;">
           <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">Technologies Used:</h4>
           <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-            ${project.tech.map(t => `<span class="tech-pill" style="font-size: 0.8rem; padding: 4px 12px; background: rgba(99, 102, 241, 0.12); border-color: rgba(99, 102, 241, 0.25); color: var(--accent-primary);">${t}</span>`).join("")}
+            ${project.tech
+              .map(
+                t =>
+                  `<span class="tech-pill" style="font-size: 0.8rem; padding: 4px 12px; background: rgba(99, 102, 241, 0.12); border-color: rgba(99, 102, 241, 0.25); color: var(--accent-primary);">${t}</span>`
+              )
+              .join("")}
           </div>
         </div>
 
         <div style="display: flex; gap: 12px;">
-          <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex: 1;">
+          <a href="${
+            project.githubUrl
+          }" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex: 1;">
             <i class="fa-brands fa-github"></i> View Repository
           </a>
         </div>
@@ -255,7 +291,11 @@ document.addEventListener("DOMContentLoaded", () => {
     formStatus.className = "form-status-message success";
     formStatus.innerHTML = `
       <strong><i class="fa-solid fa-circle-check"></i> Thank you, ${name}!</strong><br>
-      Your message has been received. You can also send this directly via email to <a href="mailto:anjali.tiwari.cs27@iilm.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}" style="color: inherit; text-decoration: underline;">anjali.tiwari.cs27@iilm.edu</a>.
+      Your message has been received. You can also send this directly via email to <a href="mailto:anjali.tiwari.cs27@iilm.edu?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(
+      message
+    )}" style="color: inherit; text-decoration: underline;">anjali.tiwari.cs27@iilm.edu</a>.
     `;
 
     contactForm.reset();

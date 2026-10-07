@@ -42,7 +42,8 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "ASPIRING SOFTWARE ENGINEER PASSIONATE ABOUT AI/ML, PROBLEM SOLVING & SYSTEM-LEVEL DEVELOPMENT",
+  subTitle:
+    "ASPIRING SOFTWARE ENGINEER PASSIONATE ABOUT AI/ML, PROBLEM SOLVING & SYSTEM-LEVEL DEVELOPMENT",
   skills: [
     emoji(
       "⚡ Developing AI & Deep Learning solutions using CNN, RNN, Neural Networks, OpenCV, and TensorFlow"
@@ -219,12 +220,14 @@ const openSource = {
 
 const bigProjects = {
   title: "Academic & Featured Projects",
-  subtitle: "SYSTEM-LEVEL AND AI-POWERED PROJECTS SHOWCASING FULL-STACK & AI EXPERTISE",
+  subtitle:
+    "SYSTEM-LEVEL AND AI-POWERED PROJECTS SHOWCASING FULL-STACK & AI EXPERTISE",
   projects: [
     {
       image: require("./assets/images/saayaHealthLogo.webp"),
       projectName: "AI-Based Doctor-Patient Appointment System",
-      projectDesc: "Developed an AI-powered appointment booking system connecting doctors and patients, with smart scheduling and availability management. Implemented automated appointment recommendations based on symptoms and doctor specialization. Built using Python, Machine Learning, Flask, and MySQL.",
+      projectDesc:
+        "Developed an AI-powered appointment booking system connecting doctors and patients, with smart scheduling and availability management. Implemented automated appointment recommendations based on symptoms and doctor specialization. Built using Python, Machine Learning, Flask, and MySQL.",
       footerLink: [
         {
           name: "View on GitHub",
@@ -235,7 +238,8 @@ const bigProjects = {
     {
       image: require("./assets/images/nextuLogo.webp"),
       projectName: "Library Management System (AI-Enhanced)",
-      projectDesc: "Built a robust file-based Library Management System using C Language with full CRUD operations to manage books, users, and transactions. Integrated a basic AI-based recommendation feature to suggest alternative books when a searched title is unavailable.",
+      projectDesc:
+        "Built a robust file-based Library Management System using C Language with full CRUD operations to manage books, users, and transactions. Integrated a basic AI-based recommendation feature to suggest alternative books when a searched title is unavailable.",
       footerLink: [
         {
           name: "View on GitHub",
@@ -252,8 +256,7 @@ const bigProjects = {
 
 const achievementSection = {
   title: emoji("Achievements & Certifications 🏆"),
-  subtitle:
-    "Certifications, Leadership Milestones, and Academic Achievements",
+  subtitle: "Certifications, Leadership Milestones, and Academic Achievements",
 
   achievementsCards: [
     {
@@ -332,8 +335,7 @@ const achievementSection = {
 
 const blogSection = {
   title: "Hobbies & Technical Interests",
-  subtitle:
-    "Competitive coding, technical blogging, and continuous learning",
+  subtitle: "Competitive coding, technical blogging, and continuous learning",
   displayMediumBlogs: "false", // Set true to display fetched medium blogs instead of hardcoded ones
   blogs: [
     {
@@ -356,9 +358,7 @@ const blogSection = {
 
 const talkSection = {
   title: "TALKS",
-  subtitle: emoji(
-    "I LOVE TO SHARE MY KNOWLEDGE AND COLLABORATE WITH PEERS 🎤"
-  ),
+  subtitle: emoji("I LOVE TO SHARE MY KNOWLEDGE AND COLLABORATE WITH PEERS 🎤"),
   talks: [],
   display: false // Set false to hide this section, defaults to true
 };
