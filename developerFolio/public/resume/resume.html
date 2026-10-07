@@ -601,10 +601,24 @@
         display: none !important;
       }
       .resume-header {
-        background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 45%, #a855f7 100%) !important;
+        background: #4f46e5 !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
         break-inside: avoid;
+      }
+      /* Hide decorative gradient circles in print/PDF:
+         some mobile PDF viewers render transparent overlays as black blobs */
+      .resume-header::before,
+      .resume-header::after {
+        display: none !important;
+        content: none !important;
+      }
+      /* No shadows in print/PDF: fragmented box-shadows also turn into
+         black smears on weak renderers */
+      .resume-page,
+      .photo-wrapper img,
+      .project-entry {
+        box-shadow: none !important;
       }
       .exp-entry,
       .project-entry,
@@ -673,7 +687,7 @@
     <!-- ===== HEADER ===== -->
     <header class="resume-header">
       <div class="photo-wrapper">
-        <img src="avatar.jpg" onerror="this.onerror=null; this.src='../assets/avatar.jpg';" alt="Anjali Tiwari" />
+        <img src="../public/photo/photo.jpg" onerror="this.onerror=null; this.src='avatar.jpg';" alt="Anjali Tiwari" />
       </div>
       <div class="header-info">
         <h1>Anjali Tiwari</h1>
