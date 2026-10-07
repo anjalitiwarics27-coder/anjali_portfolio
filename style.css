@@ -450,6 +450,7 @@ body.light-theme .theme-toggle-btn .sun-icon {
 
 .hero-cta-group {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   margin-bottom: 32px;
 }
