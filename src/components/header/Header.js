@@ -75,9 +75,8 @@ function Header() {
             <li>
               <a
                 href={greeting.resumeLink ? greeting.resumeLink : "#resume"}
-                download={
-                  greeting.resumeLink ? "AnjaliTiwariResume.pdf" : undefined
-                }
+                target={greeting.resumeLink ? "_blank" : undefined}
+                rel={greeting.resumeLink ? "noopener noreferrer" : undefined}
               >
                 Resume
               </a>
