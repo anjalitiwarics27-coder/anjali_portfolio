@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/anjali_portfolio/static/css/main.32f103e1.css",
-    "main.js": "/anjali_portfolio/static/js/main.ff0b36e5.js",
+    "main.css": "/anjali_portfolio/static/css/main.8718c7c1.css",
+    "main.js": "/anjali_portfolio/static/js/main.506322cb.js",
     "static/css/64.bba8fa55.chunk.css": "/anjali_portfolio/static/css/64.bba8fa55.chunk.css",
     "static/js/64.56dc6704.chunk.js": "/anjali_portfolio/static/js/64.56dc6704.chunk.js",
     "static/css/769.b3cbb36b.chunk.css": "/anjali_portfolio/static/css/769.b3cbb36b.chunk.css",
@@ -10,7 +10,6 @@
     "static/media/logo.jpeg": "/anjali_portfolio/static/media/logo.50a0ef55dbc6dd283313.jpeg",
     "static/media/Agustina.woff": "/anjali_portfolio/static/media/Agustina.eb0c59dda4cc308cba96.woff",
     "static/media/manOnTable.svg": "/anjali_portfolio/static/media/manOnTable.8f117eb207e57ed8f89d67d595aceb45.svg",
-    "static/media/contactMailDark.svg": "/anjali_portfolio/static/media/contactMailDark.1db650d351729a0f17b4e3104e6a7b7a.svg",
     "static/media/developerActivity.svg": "/anjali_portfolio/static/media/developerActivity.2c0445cae86f4243433a2f5a22b2c031.svg",
     "static/media/googleAssistantLogo.webp": "/anjali_portfolio/static/media/googleAssistantLogo.f720c71652579588524a.webp",
     "static/media/airbnbLogo.png": "/anjali_portfolio/static/media/airbnbLogo.e8497507db673acd3991.png",
@@ -21,15 +20,15 @@
     "static/media/nextuLogo.webp": "/anjali_portfolio/static/media/nextuLogo.e033dbfa4c58c0a906aa.webp",
     "index.html": "/anjali_portfolio/index.html",
     "static/media/talksCardBack.svg": "/anjali_portfolio/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
-    "main.32f103e1.css.map": "/anjali_portfolio/static/css/main.32f103e1.css.map",
-    "main.ff0b36e5.js.map": "/anjali_portfolio/static/js/main.ff0b36e5.js.map",
+    "main.8718c7c1.css.map": "/anjali_portfolio/static/css/main.8718c7c1.css.map",
+    "main.506322cb.js.map": "/anjali_portfolio/static/js/main.506322cb.js.map",
     "64.bba8fa55.chunk.css.map": "/anjali_portfolio/static/css/64.bba8fa55.chunk.css.map",
     "64.56dc6704.chunk.js.map": "/anjali_portfolio/static/js/64.56dc6704.chunk.js.map",
     "769.b3cbb36b.chunk.css.map": "/anjali_portfolio/static/css/769.b3cbb36b.chunk.css.map",
     "769.bda0d7b7.chunk.js.map": "/anjali_portfolio/static/js/769.bda0d7b7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.32f103e1.css",
-    "static/js/main.ff0b36e5.js"
+    "static/css/main.8718c7c1.css",
+    "static/js/main.506322cb.js"
   ]
 }
