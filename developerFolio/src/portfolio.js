@@ -25,7 +25,7 @@ const greeting = {
   subTitle: emoji(
     "Aspiring Software Engineer 🚀 with strong knowledge of C, C++, Python, Java, Data Structures & Algorithms, and AI/ML. Passionate about problem-solving, building intelligent applications, and developing scalable systems following SDLC."
   ),
-  resumeLink: "resume/AnjaliTiwariResume.pdf", // Link to email or resume PDF
+  resumeLink: "resume/AnjaliTiwariResume.pdf?v=anjaliFemale2026", // Link to email or resume PDF (versioned to bust favicon/PDF cache so tab shows female photo)
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
