@@ -1,28 +1,69 @@
 @import "../../_globalColor";
 
 .main-button {
-  background-color: $buttonColor;
-  border: solid 1px $buttonColor;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  border: solid 1px transparent;
   color: $textColorDark;
   font-weight: 700;
   width: max-content;
-  padding: 13px 22px;
-  margin-right: 50px;
+  padding: 13px 24px;
+  margin-right: 0;
   text-transform: uppercase;
-  border-radius: 6px;
+  border-radius: 9999px;
   text-align: center;
   text-decoration: none;
-  display: block;
-  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 0;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease-in-out 0s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+  transition: all 0.3s ease;
 }
 .main-button:hover {
-  background-color: $darkBoxShadow2;
-  color: $buttonColor;
-  transition: all 0.3s ease 0s;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  color: $textColorDark;
+  transition: all 0.3s ease;
   transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(99, 102, 241, 0.5);
+}
+.main-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+}
+.main-button:hover::after {
+  left: 125%;
+}
+.download-link-button {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid $lightBorder1 !important;
+  color: inherit !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(8px);
+}
+.download-link-button:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(99, 102, 241, 0.45) !important;
+  color: inherit !important;
+}
+.download-link-button::after {
+  display: none;
 }
 .project-button {
   display: flex;
@@ -36,7 +77,7 @@
 @media (max-width: 768px) {
   .main-button {
     font-size: 0.938rem;
-    padding: 12px 18px;
+    padding: 12px 20px;
     margin-right: 0px;
   }
 }

@@ -20,8 +20,14 @@ export default function Greeting() {
         <div className="greeting-main">
           <div className="greeting-text-div">
             <div>
+              <div className="hero-pill">
+                <span className="hero-status-dot"></span>
+                Open for Software Engineering &amp; AI Roles
+              </div>
               <h1
-                className={isDark ? "dark-mode greeting-text" : "greeting-text"}
+                className={
+                  isDark ? "dark-mode greeting-text" : "greeting-text"
+                }
               >
                 {" "}
                 {greeting.title}{" "}
@@ -36,6 +42,20 @@ export default function Greeting() {
               >
                 {greeting.subTitle}
               </p>
+              <div className="hero-stats">
+                <span className="hero-stat-badge">
+                  <i className="fas fa-graduation-cap"></i>
+                  <strong>9.3 CGPA</strong> @ IILM University
+                </span>
+                <span className="hero-stat-badge">
+                  <i className="fas fa-briefcase"></i>
+                  <strong>3</strong> Internships
+                </span>
+                <span className="hero-stat-badge">
+                  <i className="fas fa-location-dot"></i>
+                  South Delhi, India
+                </span>
+              </div>
               <div id="resume" className="empty-div"></div>
               <SocialMedia />
               <div className="button-greeting-div">
@@ -52,14 +72,17 @@ export default function Greeting() {
             </div>
           </div>
           <div className="greeting-image-div">
-            {illustration.animated ? (
-              <DisplayLottie animationData={landingPerson} />
-            ) : (
-              <img
-                alt="man sitting on table"
-                src={require("../../assets/images/manOnTable.svg")}
-              ></img>
-            )}
+            <div className="hero-image-glow"></div>
+            <div className="hero-image-card">
+              {illustration.animated ? (
+                <DisplayLottie animationData={landingPerson} />
+              ) : (
+                <img
+                  alt="man sitting on table"
+                  src={require("../../assets/images/manOnTable.svg")}
+                ></img>
+              )}
+            </div>
           </div>
         </div>
       </div>

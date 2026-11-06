@@ -8,7 +8,9 @@
 /* header */
 
 .dark-menu {
-  background-color: $darkBackground !important;
+  background-color: rgba(23, 28, 40, 0.92) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   color: $textColorDark;
 }
 
@@ -17,14 +19,20 @@
 }
 
 .dark-menu li a:hover {
-  background-color: $buttonColor !important;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 18px rgba(99, 102, 241, 0.35);
 }
 
 .header {
-  background-color: $lightBackground1;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   max-width: 100%;
-  padding: 15px 20px;
+  padding: 14px 22px;
   margin: 0px auto;
+  border-bottom: 1px solid $lightBorder1;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
 .header ul {
@@ -32,6 +40,7 @@
   padding: 0;
   list-style: none;
   overflow: hidden;
+  gap: 4px;
 }
 
 .grey-color {
@@ -40,14 +49,21 @@
 
 .header li a {
   display: block;
-  padding: 15px 20px;
+  padding: 10px 16px;
   color: $textColor;
   text-decoration: none;
+  font-weight: 600;
+  font-size: 14.5px;
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+  white-space: nowrap;
 }
 
 .header li a:hover,
 .header .menu-btn:hover {
-  background-color: $headerHoverBG;
+  background: rgba(99, 102, 241, 0.12);
+  color: #6366f1;
+  transform: translateY(-1px);
 }
 
 .header .logo {
@@ -56,8 +72,13 @@
   float: left;
   font-size: 1.5em;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 4px;
   line-height: normal;
+  transition: transform 0.25s ease;
+}
+
+.header .logo:hover {
+  transform: translateY(-1px);
 }
 
 .header .logo-name {
@@ -65,7 +86,11 @@
   font-weight: bold;
   font-variant-ligatures: no-common-ligatures;
   -webkit-font-variant-ligatures: no-common-ligatures;
-  padding: 0 10px;
+  padding: 0 6px;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* menu */
@@ -137,7 +162,7 @@
 }
 
 .header .menu-btn:checked ~ .menu {
-  max-height: 486px;
+  max-height: 556px;
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
