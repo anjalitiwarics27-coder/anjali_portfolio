@@ -22,7 +22,11 @@ export default function EducationCard({school}) {
   return (
     <div>
       <Fade left duration={1000}>
-        <div className="education-card">
+        <div
+          className={
+            isDark ? "education-card dark-education-card" : "education-card"
+          }
+        >
           {school.logo && (
             <div className="education-card-left">
               <img
@@ -31,6 +35,8 @@ export default function EducationCard({school}) {
                 className="education-roundedimg"
                 src={school.logo}
                 alt={school.schoolName}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           )}

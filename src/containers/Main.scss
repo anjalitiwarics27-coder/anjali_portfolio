@@ -6,6 +6,48 @@ html {
 
 body {
   overflow-x: hidden;
+  background:
+    radial-gradient(
+        circle at 15% 10%,
+        rgba(99, 102, 241, 0.06) 0%,
+        transparent 40%
+      ),
+    radial-gradient(
+        circle at 85% 30%,
+        rgba(168, 85, 247, 0.05) 0%,
+        transparent 40%
+      ),
+    radial-gradient(
+        circle at 50% 90%,
+        rgba(6, 182, 212, 0.05) 0%,
+        transparent 45%
+      ),
+    $lightBackground3;
+  background-attachment: fixed;
+}
+
+.dark-mode {
+  background-color: $darkBackground;
+  color: white;
+  transition: "0.1s";
+}
+
+.main {
+  width: 92%;
+  max-width: 1200px;
+  padding: 36px 10px;
+  margin: 0px auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 ::selection {
@@ -13,7 +55,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 9px;
 }
 ::-webkit-scrollbar-track {
   background: $lightBackground3;
@@ -80,5 +122,14 @@ body {
   }
   .section-subtext {
     font-size: 14px;
+  }
+  .main {
+    padding: 26px 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }

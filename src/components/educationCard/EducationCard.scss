@@ -19,6 +19,22 @@
   box-shadow: 0 20px 35px rgba(99, 102, 241, 0.16);
 }
 
+.education-card.dark-education-card {
+  background: rgba(23, 28, 40, 0.65);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.education-card.dark-education-card .education-text-school,
+.education-card.dark-education-card .education-text-duration,
+.education-card.dark-education-card .education-text-desc,
+.education-card.dark-education-card .education-text-bullets li {
+  color: #ffffff;
+}
+
+.education-card.dark-education-card .education-text-subHeader {
+  color: #a5b4fc;
+}
+
 .education-card:hover + .education-card-border {
   border-color: $educationCardBorder;
   width: 100%;

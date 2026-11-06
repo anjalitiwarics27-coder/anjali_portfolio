@@ -58,6 +58,8 @@ export default function StartupProject() {
                         src={project.image}
                         alt={project.projectName}
                         className="card-image"
+                        loading="lazy"
+                        decoding="async"
                       ></img>
                     </div>
                   ) : null}

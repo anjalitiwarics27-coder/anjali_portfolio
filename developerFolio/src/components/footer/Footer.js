@@ -4,6 +4,7 @@ import {Fade} from "react-reveal";
 import emoji from "react-easy-emoji";
 import StyleContext from "../../contexts/StyleContext";
 import {greeting} from "../../portfolio";
+import SocialMedia from "../socialMedia/SocialMedia";
 
 export default function Footer() {
   const {isDark} = useContext(StyleContext);
@@ -16,6 +17,21 @@ export default function Footer() {
             <span className="footer-logo-name">{greeting.username}</span>
             <span className="grey-color">/&gt;</span>
           </a>
+          <div className="footer-social">
+            <SocialMedia />
+          </div>
+          <nav className="footer-links">
+            <a href="#skills">Skills</a>
+            <span className="footer-dot">•</span>
+            <a href="#experience">Experiences</a>
+            <span className="footer-dot">•</span>
+            <a href="#projects">Projects</a>
+            <span className="footer-dot">•</span>
+            <a href="#achievements">Achievements</a>
+            <span className="footer-dot">•</span>
+            <a href="#contact">Contact</a>
+          </nav>
+          <div className="footer-divider"></div>
           <p className={isDark ? "dark-mode footer-text" : "footer-text"}>
             {emoji("Made with ❤️ by Anjali Tiwari")}
           </p>
