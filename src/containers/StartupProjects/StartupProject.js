@@ -6,7 +6,7 @@ import StyleContext from "../../contexts/StyleContext";
 
 export default function StartupProject() {
   function openUrlInNewTab(url) {
-    if (!url) {
+    if (!url || url === "#") {
       return;
     }
     var win = window.open(url, "_blank");
@@ -21,16 +21,25 @@ export default function StartupProject() {
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="projects">
         <div>
-          <h1 className="skills-heading">{bigProjects.title}</h1>
-          <p
-            className={
-              isDark
-                ? "dark-mode project-subtitle"
-                : "subTitle project-subtitle"
-            }
-          >
-            {bigProjects.subtitle}
-          </p>
+          <div className="section-header">
+            <span className="section-badge">
+              <i className="fas fa-rocket"></i> Featured Work
+            </span>
+            <h1 className="skills-heading">
+              Academic <span className="gradient-text">&amp; Featured</span>
+              <br />
+              Projects
+            </h1>
+            <p
+              className={
+                isDark
+                  ? "dark-mode project-subtitle"
+                  : "subTitle project-subtitle"
+              }
+            >
+              {bigProjects.subtitle}
+            </p>
+          </div>
 
           <div className="projects-container">
             {bigProjects.projects.map((project, i) => {
@@ -68,15 +77,39 @@ export default function StartupProject() {
                     {project.footerLink ? (
                       <div className="project-card-footer">
                         {project.footerLink.map((link, i) => {
+                          const isLive = link.name === "View Live";
+                          const url = link.url;
+                          const comingSoon = url === "#" || !url;
                           return (
                             <span
                               key={i}
                               className={
-                                isDark ? "dark-mode project-tag" : "project-tag"
+                                isDark
+                                  ? isLive
+                                    ? "dark-mode project-tag project-tag-live"
+                                    : "dark-mode project-tag"
+                                  : isLive
+                                  ? "project-tag project-tag-live"
+                                  : "project-tag"
                               }
                               onClick={() => openUrlInNewTab(link.url)}
+                              title={
+                                comingSoon
+                                  ? "Live demo coming soon"
+                                  : link.name
+                              }
+                              style={comingSoon ? {opacity: 0.6} : undefined}
                             >
-                              {link.name}
+                              {isLive ? (
+                                <>
+                                  <i className="fas fa-arrow-up-right-from-square"></i>{" "}
+                                  {link.name}
+                                </>
+                              ) : (
+                                <>
+                                  <i className="fab fa-github"></i> {link.name}
+                                </>
+                              )}
                             </span>
                           );
                         })}

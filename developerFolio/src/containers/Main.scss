@@ -1,7 +1,84 @@
 @import "../_globalColor";
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: $lightBackground3;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  border-radius: 9999px;
+}
+
 .dark-mode {
   background-color: $darkBackground;
   color: white;
   transition: "0.1s";
+}
+
+/* Unified professional section header */
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 38px;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6366f1;
+  margin-bottom: 14px;
+}
+
+.section-heading {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+}
+
+.section-heading .gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtext {
+  color: $subTitle;
+  font-size: 15.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 34px;
+  }
+  .section-subtext {
+    font-size: 14px;
+  }
 }

@@ -3,20 +3,26 @@
 #topButton {
   visibility: hidden;
   position: fixed;
-  bottom: 20px;
-  right: 30px;
+  bottom: 24px;
+  right: 24px;
   z-index: 99;
   border: none;
   outline: none;
-  background-color: $buttonColor;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
   color: white;
   cursor: pointer;
-  padding: 15px;
-  border-radius: 15px;
-  font-size: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 #topButton:hover {
-  background-color: $topButtonHover;
-  transition: all ease-in-out 0.2s;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 16px 30px rgba(99, 102, 241, 0.6);
 }

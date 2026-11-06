@@ -46,7 +46,14 @@ export default function Projects() {
     return (
       <Suspense fallback={renderLoader()}>
         <div className="main" id="opensource">
-          <h1 className="project-title">Open Source Projects</h1>
+          <div className="section-header">
+            <span className="section-badge">
+              <i className="fab fa-github"></i> Open Source
+            </span>
+            <h1 className="project-title">
+              Open Source <span className="gradient-text">Projects</span>
+            </h1>
+          </div>
           <div className="repo-cards-div-main">
             {repo.map((v, i) => {
               if (!v) {
