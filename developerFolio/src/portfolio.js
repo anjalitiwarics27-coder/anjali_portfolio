@@ -231,7 +231,7 @@ const bigProjects = {
       footerLink: [
         {
           name: "View on GitHub",
-          url: "https://github.com/anjalitiwarics27-coder/Anjali"
+          url: "https://github.com/anjalitiwarics27-coder/Ai_based_Doctor_Patient_Appointment"
         }
       ]
     },
@@ -243,7 +243,11 @@ const bigProjects = {
       footerLink: [
         {
           name: "View on GitHub",
-          url: "https://github.com/anjalitiwarics27-coder/Anjali"
+          url: "https://github.com/anjalitiwarics27-coder/lib_management_using_ai"
+        },
+        {
+          name: "View Live",
+          url: "https://lib-management-using-ai.vercel.app/"
         }
       ]
     }
