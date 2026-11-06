@@ -224,7 +224,7 @@ const bigProjects = {
     "SYSTEM-LEVEL AND AI-POWERED PROJECTS SHOWCASING FULL-STACK & AI EXPERTISE",
   projects: [
     {
-      image: require("./assets/images/saayaHealthLogo.webp"),
+      image: require("./assets/images/doctor-appointment.svg"),
       projectName: "AI-Based Doctor-Patient Appointment System",
       projectDesc:
         "Developed an AI-powered appointment booking system connecting doctors and patients, with smart scheduling and availability management. Implemented automated appointment recommendations based on symptoms and doctor specialization. Built using Python, Machine Learning, Flask, and MySQL.",
@@ -232,11 +232,16 @@ const bigProjects = {
         {
           name: "View on GitHub",
           url: "https://github.com/anjalitiwarics27-coder/Ai_based_Doctor_Patient_Appointment"
+        },
+        // TODO: picks hone par live demo URL yaha paste kar dena
+        {
+          name: "View Live",
+          url: "#"
         }
       ]
     },
     {
-      image: require("./assets/images/nextuLogo.webp"),
+      image: require("./assets/images/library.svg"),
       projectName: "Library Management System (AI-Enhanced)",
       projectDesc:
         "Built a robust file-based Library Management System using C Language with full CRUD operations to manage books, users, and transactions. Integrated a basic AI-based recommendation feature to suggest alternative books when a searched title is unavailable.",
