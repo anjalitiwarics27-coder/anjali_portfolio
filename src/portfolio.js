@@ -175,7 +175,7 @@ const workExperiences = {
     {
       role: "Software Development Intern",
       company: "DigiSamaksh Private Limited",
-      companylogo: require("./assets/images/saayaHealthLogo.webp"),
+      companylogo: "company-images/digisamaksh.svg",
       date: "Jun 1 – Aug 10, 2026",
       desc: "Job Portal Recommendation System: Designed and developed an intelligent recommendation system for a job portal to match candidates with relevant job listings based on skills, experience, and preferences.",
       descBullets: [
@@ -186,7 +186,7 @@ const workExperiences = {
     {
       role: "Research Intern",
       company: "Wildlife Institute of India",
-      companylogo: require("./assets/images/nextuLogo.webp"),
+      companylogo: "company-images/wildlife.svg",
       date: "Mar – Apr 2026",
       desc: "Unique Elephant ID Recognition System using Deep Learning: Developed a deep learning-based computer vision system to identify individual elephants using image recognition.",
       descBullets: [
@@ -197,7 +197,7 @@ const workExperiences = {
     {
       role: "Java Full Stack Developer (Grade: O - Outstanding)",
       company: "EduSkills Virtual Internship (AICTE)",
-      companylogo: require("./assets/images/airbnbLogo.png"),
+      companylogo: "company-images/eduskills.svg",
       date: "Jan – Mar 2026",
       desc: "Completed an intensive 10-week virtual internship on Java Full Stack Development, conducted through the National Internship Portal in association with IILM University, Greater Noida.",
       descBullets: [

@@ -1,20 +1,44 @@
 .experience-cards-div {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 1rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
 }
 
 .experience-heading {
-  font-size: 56px;
-  font-weight: 400;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.experience-heading .exp-gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.exp-subtitle {
+  color: #868e96;
+  font-size: 15px;
+  margin-bottom: 28px;
 }
 
 .experience-container {
   display: flex;
-  width: 90%;
-  padding: 20px 10px;
+  width: 92%;
+  max-width: 1200px;
+  padding: 28px 20px;
   margin: 0px auto;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
+  border-radius: 28px;
+  background: linear-gradient(
+    180deg,
+    rgba(99, 102, 241, 0.05) 0%,
+    rgba(168, 85, 247, 0.04) 50%,
+    rgba(6, 182, 212, 0.05) 100%
+  );
+  border: 1px solid rgba(211, 211, 211, 0.397);
 }
 
 .experience-container > * {
@@ -25,13 +49,19 @@
 
 @media (max-width: 1380px) {
   .experience-heading {
-    font-size: 40px;
+    font-size: 42px;
   }
 }
 
 @media (max-width: 768px) {
   .experience-heading {
-    font-size: 30px;
+    font-size: 34px;
     text-align: center;
+  }
+  .exp-subtitle {
+    text-align: center;
+  }
+  .experience-container {
+    padding: 22px 14px;
   }
 }

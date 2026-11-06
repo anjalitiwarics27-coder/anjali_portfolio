@@ -4,19 +4,28 @@
   position: relative;
   background-color: $lightBackground2;
   box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  border-radius: 10px;
+  border-radius: 20px;
   border: 1px solid $lightBorder1;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .experience-card-dark {
   position: relative;
   background-color: $darkBackground;
   box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  border-radius: 10px;
+  border-radius: 20px;
   border: 1px solid $lightBorder1;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.experience-card:hover {
+.experience-card:hover,
+.experience-card-dark:hover {
+  transform: translateY(-5px);
+  border-color: rgba(99, 102, 241, 0.45);
   box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
 }
 
@@ -25,7 +34,7 @@
   background-repeat: no-repeat;
   background-size: 150%;
   background: $experienceCardBannerLG;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 20px 20px 0px 0px;
   -webkit-filter: blur(0px);
   -moz-filter: blur(0px);
   -o-filter: blur(0px);
@@ -35,6 +44,20 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  position: relative;
+}
+
+.experience-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0.04) 45%,
+    rgba(0, 0, 0, 0.14) 100%
+  );
+  pointer-events: none;
 }
 
 .experience-blurred_div {
@@ -49,7 +72,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 20px 20px 0px 0px;
 }
 
 .experience-div-company {
@@ -62,19 +85,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 .experience-text-company {
   text-align: center;
-  padding: 1.5rem;
+  padding: 1.2rem 1.5rem;
   margin: 0;
   color: $lightBackground1;
-  font-size: 25px;
+  font-size: 24px;
   text-align: center;
-  font-weight: 700;
+  font-weight: 800;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .experience-roundedimg {
@@ -85,20 +110,29 @@
   top: 7rem;
   margin-left: auto;
   margin-right: auto;
-  width: 8rem;
-  height: 8rem;
+  width: 7.5rem;
+  height: 7.5rem;
   box-shadow: 0 0.5rem 1rem $lightBoxShadowDarker;
   border-radius: 50%;
+  border: 3px solid #ffffff;
+  background: #ffffff;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.experience-card:hover .experience-roundedimg,
+.experience-card-dark:hover .experience-roundedimg {
+  transform: scale(1.07) rotate(-3deg);
 }
 
 .experience-text-role {
   text-align: center;
   color: $textColor;
-  font-weight: 700;
-  font-size: 25px;
+  font-weight: 800;
+  font-size: 23px;
   margin: 0px;
   padding-top: 1.5rem;
-  line-height: normal;
+  line-height: 1.25;
 }
 .dark-mode-text {
   color: $textColorDark !important;
@@ -106,19 +140,45 @@
 .experience-text-date {
   text-align: center;
   color: $textColor;
-  font-size: 20px;
-  margin: 0px;
-  padding-top: 1rem;
-  font-weight: 600;
-}
-
-.experience-text-desc {
-  text-align: center;
+  font-size: 14px;
+  margin: 10px auto 0;
+  padding: 6px 14px;
+  font-weight: 700;
+  display: inline-block;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 9999px;
 }
 
 .experience-text-details {
   padding: 1.5rem;
   margin-top: 2rem;
+  text-align: center;
+}
+
+.experience-text-desc {
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.experience-text-details ul {
+  text-align: left;
+  padding-left: 18px;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.experience-text-details li {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.experience-text-details li::marker {
+  color: #6366f1;
+  font-weight: 800;
 }
 
 /* Media Query */
@@ -132,7 +192,7 @@
     font-size: 22px;
   }
   .experience-text-date {
-    font-size: 18px;
+    font-size: 14px;
   }
   .experience-roundedimg {
     width: 6.5rem;
@@ -142,15 +202,15 @@
 
 @media (max-width: 768px) {
   .experience-text-role {
-    font-size: 22px;
+    font-size: 21px;
   }
   .experience-text-company {
-    font-size: 22px;
+    font-size: 20px;
   }
   .experience-text-date {
-    font-size: 18px;
+    font-size: 14px;
   }
   .experience-text-desc {
-    font-size: 16px;
+    font-size: 14.5px;
   }
 }

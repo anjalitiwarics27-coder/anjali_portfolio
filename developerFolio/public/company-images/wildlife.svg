@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10b981"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+  <rect width="200" height="200" rx="24" fill="url(#g)"/>
+  <!-- Paw -->
+  <ellipse cx="100" cy="126" rx="34" ry="26" fill="#ffffff"/>
+  <circle cx="66" cy="84" r="14" fill="#ffffff"/>
+  <circle cx="88" cy="70" r="14" fill="#ffffff"/>
+  <circle cx="112" cy="70" r="14" fill="#ffffff"/>
+  <circle cx="134" cy="84" r="14" fill="#ffffff"/>
+  <!-- Elephant silhouette mark -->
+  <path d="M70 148 q-10 -30 18 -34 q30 -4 44 14 l6 20 q-6 6 -16 4 l-4 -12 q-18 8 -34 0 l-4 12 q-8 -2 -10 -4 Z" fill="#ffffff" opacity=".28"/>
+  <circle cx="156" cy="56" r="9" fill="#ffffff" opacity=".7"/>
+</svg>
