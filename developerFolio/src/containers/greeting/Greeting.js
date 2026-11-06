@@ -2,11 +2,9 @@ import React, {useContext} from "react";
 import {Fade} from "react-reveal";
 import emoji from "react-easy-emoji";
 import "./Greeting.scss";
-import landingPerson from "../../assets/lottie/landingPerson";
-import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
-import {illustration, greeting} from "../../portfolio";
+import {greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Greeting() {
@@ -73,15 +71,39 @@ export default function Greeting() {
           </div>
           <div className="greeting-image-div">
             <div className="hero-image-glow"></div>
-            <div className="hero-image-card">
-              {illustration.animated ? (
-                <DisplayLottie animationData={landingPerson} />
-              ) : (
+            <div className="hero-image-card hero-photo-card">
+              <div className="hero-photo-wrap">
                 <img
-                  alt="man sitting on table"
-                  src={require("../../assets/images/manOnTable.svg")}
-                ></img>
-              )}
+                  src={require("../../assets/images/Anjali_image.jpeg")}
+                  alt="Anjali Tiwari — Software Engineer"
+                  className="hero-photo"
+                  loading="eager"
+                  decoding="async"
+                />
+                <div className="hero-photo-overlay"></div>
+                <div className="hero-name-plate">
+                  <span className="hero-name">Anjali Tiwari</span>
+                  <span className="hero-role">
+                    Software Engineer • AI/ML Developer
+                  </span>
+                </div>
+              </div>
+              <div className="hero-badge hero-badge-1">
+                <i className="fab fa-python" style={{color: "#38bdf8"}}></i>
+                <span>Python &amp; AI</span>
+              </div>
+              <div className="hero-badge hero-badge-2">
+                <i className="fas fa-laptop-code" style={{color: "#a855f7"}}></i>
+                <span>C++ &amp; DSA</span>
+              </div>
+              <div className="hero-badge hero-badge-3">
+                <i className="fab fa-java" style={{color: "#f97316"}}></i>
+                <span>Java Full Stack</span>
+              </div>
+              <div className="hero-badge hero-badge-4">
+                <i className="fas fa-database" style={{color: "#10b981"}}></i>
+                <span>MySQL &amp; APIs</span>
+              </div>
             </div>
           </div>
         </div>
