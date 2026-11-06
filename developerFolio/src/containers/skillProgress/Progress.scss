@@ -1,45 +1,250 @@
 @import "../../_globalColor";
 
+.prof-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.prof-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6366f1;
+  margin-bottom: 14px;
+}
+
+.skills-heading {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.prof-gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.prof-subtitle {
+  color: $subTitle;
+  font-size: 15px;
+}
+
 .meter {
-  height: 20px;
+  height: 14px;
   position: relative;
-  background: $progressBarBackground;
-  -moz-border-radius: 25px;
-  -webkit-border-radius: 25px;
-  border-radius: 25px;
+  background: rgba(134, 142, 150, 0.18);
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 1px solid $lightBorder1;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 .meter > span {
   display: block;
   height: 100%;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  background-color: $progressBarSpanBG;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #6366f1 0%, #a855f7 55%, #ec4899 100%);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 0 14px rgba(99, 102, 241, 0.45);
+  animation: prof-grow 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+.meter > span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  animation: prof-shine 2.8s ease infinite;
+}
+
+@keyframes prof-grow {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes prof-shine {
+  0% {
+    left: -70%;
+  }
+  60% {
+    left: 130%;
+  }
+  100% {
+    left: 130%;
+  }
+}
+
 .skill {
-  line-height: 3.5vw;
+  line-height: 1.5;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid $lightBorder1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
 }
+
+.skill:hover {
+  transform: translateY(-3px);
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 14px 28px rgba(99, 102, 241, 0.16);
+}
+
+.skill-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.skill-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  min-width: 0;
+}
+
+.skill-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+  box-shadow: 0 6px 14px rgba(99, 102, 241, 0.35);
+}
+
+.skill:nth-child(3) .skill-icon {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+}
+
+.skill:nth-child(4) .skill-icon {
+  background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+}
+
+.skill:nth-child(5) .skill-icon {
+  background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+}
+
+.skill:nth-child(6) .skill-icon {
+  background: linear-gradient(135deg, #ec4899 0%, #f59e0b 100%);
+}
+
+.skill:nth-child(7) .skill-icon {
+  background: linear-gradient(135deg, #645beb 0%, #ec4899 100%);
+}
+
+.skill-pct {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
 .skill-bars {
   font-size: 28px;
   width: 40%;
 }
 .skills-container {
   display: flex;
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  width: 92%;
+  padding: 24px 20px;
+  margin: 0 auto;
+  margin-top: 2.5rem;
+  gap: 32px;
+  align-items: center;
+  border-radius: 28px;
+  background: linear-gradient(
+    180deg,
+    rgba(99, 102, 241, 0.05) 0%,
+    rgba(168, 85, 247, 0.04) 50%,
+    rgba(6, 182, 212, 0.05) 100%
+  );
+  border: 1px solid $lightBorder1;
 }
 .skills-container > * {
   flex: 1;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
+
+.skills-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.skills-image-glow {
+  position: absolute;
+  inset: 12px;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  border-radius: 28px;
+  filter: blur(28px);
+  opacity: 0.28;
+  animation: proficiency-glow 5s ease-in-out infinite alternate;
+}
+
+@keyframes proficiency-glow {
+  from {
+    opacity: 0.2;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 0.35;
+    transform: scale(1.02);
+  }
+}
+
+.skills-image-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid $lightBorder1;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(14px);
+  width: 100%;
+  max-width: 420px;
+}
+
 .skills-image > img {
-  margin-left: 80px;
-  max-width: 90%;
+  margin-left: 0;
+  max-width: 100%;
   height: auto;
 }
 
@@ -47,24 +252,47 @@
 
 @media (max-width: 1456px) {
   .skills-bar {
-    line-height: 4rem;
+    line-height: 1.5;
   }
   .skills-image {
     display: none;
     order: 2;
+  }
+  .skills-container {
+    flex-direction: column;
   }
 }
 
 @media (max-width: 768px) {
   .skills-container {
     flex-direction: column;
+    width: 94%;
+    padding: 20px 14px;
   }
   .skills-bar {
-    line-height: 3rem;
-    margin: 20px;
+    line-height: 1.5;
+    margin: 0;
   }
   .skills-image {
     display: none;
     order: 2;
+  }
+  .skills-heading {
+    font-size: 40px;
+    text-align: center;
+  }
+  .skill {
+    padding: 16px;
+  }
+  .skill-title {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meter > span,
+  .meter > span::after,
+  .skills-image-glow {
+    animation: none;
   }
 }
