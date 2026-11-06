@@ -81,28 +81,28 @@ export default function Greeting() {
                   decoding="async"
                 />
                 <div className="hero-photo-overlay"></div>
+                <div className="hero-badge hero-badge-1">
+                  <i className="fab fa-python" style={{color: "#38bdf8"}}></i>
+                  <span>Python &amp; AI</span>
+                </div>
+                <div className="hero-badge hero-badge-2">
+                  <i className="fas fa-laptop-code" style={{color: "#a855f7"}}></i>
+                  <span>C++ &amp; DSA</span>
+                </div>
+                <div className="hero-badge hero-badge-3">
+                  <i className="fab fa-java" style={{color: "#f97316"}}></i>
+                  <span>Java Full Stack</span>
+                </div>
+                <div className="hero-badge hero-badge-4">
+                  <i className="fas fa-database" style={{color: "#10b981"}}></i>
+                  <span>MySQL &amp; APIs</span>
+                </div>
                 <div className="hero-name-plate">
                   <span className="hero-name">Anjali Tiwari</span>
                   <span className="hero-role">
                     Software Engineer • AI/ML Developer
                   </span>
                 </div>
-              </div>
-              <div className="hero-badge hero-badge-1">
-                <i className="fab fa-python" style={{color: "#38bdf8"}}></i>
-                <span>Python &amp; AI</span>
-              </div>
-              <div className="hero-badge hero-badge-2">
-                <i className="fas fa-laptop-code" style={{color: "#a855f7"}}></i>
-                <span>C++ &amp; DSA</span>
-              </div>
-              <div className="hero-badge hero-badge-3">
-                <i className="fab fa-java" style={{color: "#f97316"}}></i>
-                <span>Java Full Stack</span>
-              </div>
-              <div className="hero-badge hero-badge-4">
-                <i className="fas fa-database" style={{color: "#10b981"}}></i>
-                <span>MySQL &amp; APIs</span>
               </div>
             </div>
           </div>
