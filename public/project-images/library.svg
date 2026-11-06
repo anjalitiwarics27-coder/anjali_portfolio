@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img">
+  <rect width="400" height="300" rx="16" fill="#eef2ff"/>
+  <!-- Table -->
+  <rect x="70" y="232" width="260" height="14" rx="7" fill="#0f172a"/>
+  <rect x="90" y="246" width="16" height="22" fill="#0f172a"/>
+  <rect x="294" y="246" width="16" height="22" fill="#0f172a"/>
+  <!-- Books row 1 -->
+  <rect x="100" y="156" width="30" height="76" rx="5" fill="#6366f1"/>
+  <rect x="134" y="146" width="26" height="86" rx="5" fill="#ec4899"/>
+  <rect x="164" y="162" width="30" height="70" rx="5" fill="#06b6d4"/>
+  <rect x="198" y="150" width="26" height="82" rx="5" fill="#f59e0b"/>
+  <rect x="228" y="160" width="30" height="72" rx="5" fill="#10b981"/>
+  <!-- Shelf -->
+  <rect x="92" y="232" width="216" height="8" rx="4" fill="#a855f7"/>
+  <!-- Laptop -->
+  <rect x="120" y="186" width="98" height="46" rx="8" fill="#ffffff" stroke="#c7d2fe" stroke-width="3"/>
+  <path d="M136 202 h66 M136 214 h42" stroke="#6366f1" stroke-width="5" stroke-linecap="round"/>
+  <rect x="112" y="232" width="114" height="8" rx="4" fill="#0f172a"/>
+  <!-- AI sparkles -->
+  <path d="M272 120 l6 14 l14 2 l-10 10 l3 14 l-13 -8 l-13 8 l3 -14 l-10 -10 l14 -2 Z" fill="#a855f7"/>
+  <circle cx="298" cy="96" r="10" fill="#6366f1" opacity=".85"/>
+  <circle cx="88" cy="88" r="8" fill="#ec4899" opacity=".7"/>
+  <!-- Magnifier -->
+  <circle cx="282" cy="196" r="22" fill="#ffffff" fill-opacity=".35" stroke="#06b6d4" stroke-width="5"/>
+  <path d="M298 212 l18 18" stroke="#06b6d4" stroke-width="7" stroke-linecap="round"/>
+  <path d="M272 190 h20 M282 180 v20" stroke="#06b6d4" stroke-width="4" stroke-linecap="round"/>
+  <!-- Chat bubble -->
+  <rect x="250" y="60" width="84" height="34" rx="17" fill="#ffffff" stroke="#c7d2fe" stroke-width="2"/>
+  <text x="261" y="82" font-family="Arial" font-size="13" font-weight="bold" fill="#0f172a">AI Picks</text>
+</svg>

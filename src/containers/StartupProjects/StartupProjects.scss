@@ -3,7 +3,9 @@
 .card-image {
   max-width: 100%;
   height: auto;
-  width: 250px;
+  width: 300px;
+  border-radius: 14px;
+  display: block;
 }
 .card-title {
   color: $titleColor;
