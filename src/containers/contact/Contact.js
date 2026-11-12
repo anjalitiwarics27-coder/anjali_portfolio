@@ -9,13 +9,7 @@ export default function Contact() {
   return (
           <div className="main contact-margin-top" id="contact">
         <div className="contact-header">
-          <div className="contact-status-pill">
-            <span className="contact-status-dot"></span>
-            Available for opportunities
-          </div>
-          <h1 className="heading contact-title">
-            Let&apos;s <span className="contact-gradient-text">Connect</span> 🙏
-          </h1>
+          <h1 className="heading contact-title">Contact</h1>
           <p
             className={
               isDark ? "dark-mode contact-subtitle" : "subTitle contact-subtitle"
@@ -24,8 +18,8 @@ export default function Contact() {
             {contactInfo.subtitle}
           </p>
           <p className="contact-tagline">
-            Software engineer opportunities, internships &amp; collaborative tech
-            projects — let&apos;s build something amazing together ✨
+            Open to software engineering opportunities, internships, and
+            collaborative projects.
           </p>
         </div>
 
@@ -93,13 +87,8 @@ export default function Contact() {
               isDark ? "contact-cta-card dark-mode" : "contact-cta-card"
             }
           >
-            <div className="contact-cta-badge">
-              <i className="fas fa-wand-magic-sparkles"></i>
-            </div>
-            <h3 className="contact-cta-title">Send a Direct Message</h3>
-            <p className="contact-cta-desc">
-              I usually reply within 24 hours ⚡
-            </p>
+            <h3 className="contact-cta-title">Send a message</h3>
+            <p className="contact-cta-desc">I usually reply within 24 hours.</p>
             <div className="contact-cta-social">
               <SocialMedia />
             </div>

@@ -22,13 +22,11 @@ export default function Skills() {
         </div>
         <div className="skills-text-div">
           <div className="skills-header">
-            <span className="skills-badge">
-              <i className="fas fa-rocket"></i> Engineering Highlights
-            </span>
+            <p className="skills-badge">Engineering Highlights</p>
             <h1
               className={isDark ? "dark-mode skills-heading" : "skills-heading"}
             >
-              What I <span className="skills-gradient-text">do</span>
+              What I do
             </h1>
             <p
               className={

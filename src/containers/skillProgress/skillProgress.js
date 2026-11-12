@@ -17,14 +17,10 @@ export default function StackProgress() {
       <div className="skills-container">
         <div className="skills-bar">
           <div className="prof-header">
-            <span className="prof-badge">
-              <i className="fas fa-chart-line"></i> Core Expertise
-            </span>
-            <h1 className="skills-heading">
-              Pro<span className="prof-gradient-text">ficiency</span>
-            </h1>
+            <p className="prof-badge">Core expertise</p>
+            <h1 className="skills-heading">Proficiency</h1>
             <p className="prof-subtitle">
-              Honed through internships, projects &amp; coursework
+              Skills developed through coursework, projects, and internships
             </p>
           </div>
           {techStack.experience.map((exp, i) => {

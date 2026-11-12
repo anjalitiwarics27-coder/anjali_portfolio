@@ -20,14 +20,8 @@ export default function StartupProject() {
     <div className="main" id="projects">
         <div>
           <div className="section-header">
-            <span className="section-badge">
-              <i className="fas fa-rocket"></i> Featured Work
-            </span>
-            <h1 className="skills-heading">
-              Academic <span className="gradient-text">&amp; Featured</span>
-              <br />
-              Projects
-            </h1>
+            <p className="section-badge">Featured Work</p>
+            <h1 className="skills-heading">Academic &amp; Featured Projects</h1>
             <p
               className={
                 isDark

@@ -11,9 +11,7 @@ export default function WorkExperience() {
       <div id="experience">
         <div className="experience-container" id="workExperience">
             <div>
-              <h1 className="experience-heading">
-                Ex<span className="exp-gradient-text">periences</span> 💼
-              </h1>
+              <h1 className="experience-heading">Experience</h1>
               <p className="exp-subtitle">
                 Internships delivering AI systems, deep learning &amp; full-stack solutions
               </p>

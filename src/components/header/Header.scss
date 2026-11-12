@@ -8,9 +8,7 @@
 /* header */
 
 .dark-menu {
-  background-color: rgba(23, 28, 40, 0.92) !important;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background-color: $darkBackground !important;
   color: $textColorDark;
 }
 
@@ -19,20 +17,16 @@
 }
 
 .dark-menu li a:hover {
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%) !important;
-  color: #ffffff !important;
-  box-shadow: 0 8px 18px rgba(99, 102, 241, 0.35);
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: $textColorDark !important;
 }
 
 .header {
-  background-color: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background-color: $lightBackground1;
   max-width: 100%;
   padding: 14px 22px;
   margin: 0px auto;
   border-bottom: 1px solid $lightBorder1;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
 .header ul {
@@ -49,21 +43,19 @@
 
 .header li a {
   display: block;
-  padding: 10px 16px;
+  padding: 10px 14px;
   color: $textColor;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 14.5px;
-  border-radius: 9999px;
-  transition: all 0.25s ease;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
   white-space: nowrap;
 }
 
 .header li a:hover,
 .header .menu-btn:hover {
-  background: rgba(99, 102, 241, 0.12);
-  color: #6366f1;
-  transform: translateY(-1px);
+  background-color: $headerHoverBG;
 }
 
 .header .logo {
@@ -74,11 +66,6 @@
   text-decoration: none;
   margin-top: 4px;
   line-height: normal;
-  transition: transform 0.25s ease;
-}
-
-.header .logo:hover {
-  transform: translateY(-1px);
 }
 
 .header .logo-name {
@@ -87,10 +74,11 @@
   font-variant-ligatures: no-common-ligatures;
   -webkit-font-variant-ligatures: no-common-ligatures;
   padding: 0 6px;
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: $textColor;
+}
+
+.dark-menu .logo-name {
+  color: $textColorDark;
 }
 
 /* menu */
