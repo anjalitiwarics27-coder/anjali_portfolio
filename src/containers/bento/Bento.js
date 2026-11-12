@@ -39,7 +39,7 @@ export default function Bento() {
           {/* Tile 1: Philosophy */}
           <div className="bento-card bento-card-large">
             <div className="bento-icon-badge icon-pink">
-              <i className="fa fa-heart"></i>
+              <i className="fas fa-heart"></i>
             </div>
             <div className="bento-content">
               <span className="bento-kicker">My Coding Philosophy</span>
@@ -64,7 +64,7 @@ export default function Bento() {
           {/* Tile 2: Athlete */}
           <div className="bento-card">
             <div className="bento-icon-badge icon-amber">
-              <i className="fa fa-futbol"></i>
+              <i className="fas fa-futbol"></i>
             </div>
             <div className="bento-content">
               <span className="bento-kicker">Court to Code</span>
@@ -81,7 +81,7 @@ export default function Bento() {
           {/* Tile 3: Cadet */}
           <div className="bento-card">
             <div className="bento-icon-badge icon-mint">
-              <i className="fa fa-shield"></i>
+              <i className="fas fa-shield-alt"></i>
             </div>
             <div className="bento-content">
               <span className="bento-kicker">Cadet Corps</span>
