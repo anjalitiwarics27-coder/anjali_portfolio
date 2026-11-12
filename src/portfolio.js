@@ -21,9 +21,9 @@ const illustration = {
 
 const greeting = {
   username: "Anjali Tiwari",
-  title: "Hi all, I'm Anjali",
+  title: "Hi, I'm Anjali ✨",
   subTitle: emoji(
-    "Aspiring Software Engineer 🚀 with strong knowledge of C, C++, Python, Java, Data Structures & Algorithms, and AI/ML. Passionate about problem-solving, building intelligent applications, and developing scalable systems following SDLC."
+    "Software Developer & AI Builder 🌸. B.Tech CSE student (9.3 CGPA) at IILM University. Passionate about turning complex algorithms into elegant, human-friendly software — from tracking wild elephants with deep learning CNNs 🐘, to architecting high-performance systems in C++ & Java."
   ),
   resumeLink: "resume/", // Resume viewer page (HTML wrapper so tab shows female photo, PDF inside)
   displayGreeting: true // Set false to hide this section, defaults to true
@@ -221,13 +221,13 @@ const openSource = {
 const bigProjects = {
   title: "Academic & Featured Projects",
   subtitle:
-    "SYSTEM-LEVEL AND AI-POWERED PROJECTS SHOWCASING FULL-STACK & AI EXPERTISE",
+    "INTELLIGENT SYSTEMS, DEEP LEARNING & LOW-LEVEL SOFTWARE ARCHITECTURE",
   projects: [
     {
       image: process.env.PUBLIC_URL + "/project-images/doctor-appointment.svg",
       projectName: "AI-Based Doctor-Patient Appointment System",
       projectDesc:
-        "Developed an AI-powered appointment booking system connecting doctors and patients, with smart scheduling and availability management. Implemented automated appointment recommendations based on symptoms and doctor specialization. Built using Python, Machine Learning, Flask, and MySQL.",
+        "An intelligent healthcare triage and booking platform connecting patients with specialized doctors. Features machine learning symptom classification to automatically match medical specialties and conflict-free real-time calendar reservations. Built using Python, Machine Learning heuristics, Flask REST APIs, and MySQL.",
       footerLink: [
         {
           name: "View on GitHub",
@@ -236,10 +236,22 @@ const bigProjects = {
       ]
     },
     {
+      image: process.env.PUBLIC_URL + "/company-images/wildlife.svg",
+      projectName: "Unique Elephant ID Recognition System with CNNs",
+      projectDesc:
+        "Developed during research internship at the Wildlife Institute of India. Deep learning computer vision pipeline using OpenCV and TensorFlow/Keras to identify individual wild elephants from camera-trap imagery via biometric ear venation and contour patterns, enabling humane non-invasive wildlife conservation.",
+      footerLink: [
+        {
+          name: "View Profile",
+          url: "https://github.com/anjalitiwarics27-coder"
+        }
+      ]
+    },
+    {
       image: process.env.PUBLIC_URL + "/project-images/library.svg",
       projectName: "Library Management System (AI-Enhanced)",
       projectDesc:
-        "Built a robust file-based Library Management System using C Language with full CRUD operations to manage books, users, and transactions. Integrated a basic AI-based recommendation feature to suggest alternative books when a searched title is unavailable.",
+        "Built a robust, dependency-free Library Management System in pure C with custom binary file I/O for transactional reliability. Integrated a smart genre and metadata recommendation heuristic suggesting alternative titles when books are out of stock.",
       footerLink: [
         {
           name: "View on GitHub",

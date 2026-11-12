@@ -1,6 +1,6 @@
 /* ==========================================================================
    ANJALI TIWARI - PORTFOLIO INTERACTIVITY (app.js)
-   Theme Toggle, Filtering, Modals, Clipboard Copy & Smooth Scroll
+   Theme Toggle, Filtering, Terminal Tabs, Cheer Button, Modals, Clipboard & Form
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,57 +16,69 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("dark-theme");
   }
 
-  themeToggleBtn.addEventListener("click", () => {
-    if (document.body.classList.contains("light-theme")) {
-      document.body.classList.remove("light-theme");
-      document.body.classList.add("dark-theme");
-      localStorage.setItem("anjali_portfolio_theme", "dark");
-    } else {
-      document.body.classList.remove("dark-theme");
-      document.body.classList.add("light-theme");
-      localStorage.setItem("anjali_portfolio_theme", "light");
-    }
-  });
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+      if (document.body.classList.contains("light-theme")) {
+        document.body.classList.remove("light-theme");
+        document.body.classList.add("dark-theme");
+        localStorage.setItem("anjali_portfolio_theme", "dark");
+      } else {
+        document.body.classList.remove("dark-theme");
+        document.body.classList.add("light-theme");
+        localStorage.setItem("anjali_portfolio_theme", "light");
+      }
+    });
+  }
 
   // 2. Mobile Navigation Menu Toggle
   const mobileNavToggle = document.getElementById("mobile-nav-toggle");
   const navMenu = document.getElementById("nav-menu");
   const navLinks = document.querySelectorAll(".nav-link");
 
-  mobileNavToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
-  });
-
-  navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      navMenu.classList.remove("open");
+  if (mobileNavToggle && navMenu) {
+    mobileNavToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+      mobileNavToggle.classList.toggle("active");
     });
-  });
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+        mobileNavToggle.classList.remove("active");
+      });
+    });
+  }
 
   // 3. Header Scroll Effect & Back-to-Top Button
   const header = document.getElementById("header");
   const scrollTopBtn = document.getElementById("scroll-top-btn");
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
+    if (header) {
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
     }
 
-    if (window.scrollY > 400) {
-      scrollTopBtn.classList.add("visible");
-    } else {
-      scrollTopBtn.classList.remove("visible");
+    if (scrollTopBtn) {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add("visible");
+      } else {
+        scrollTopBtn.classList.remove("visible");
+      }
     }
   });
 
-  scrollTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     });
-  });
+  }
 
   // 4. Active Navigation Indicator on Scroll
   const sections = document.querySelectorAll("section[id]");
@@ -76,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach(current => {
       const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 120;
+      const sectionTop = current.offsetTop - 130;
       const sectionId = current.getAttribute("id");
 
       if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
@@ -111,14 +123,107 @@ document.addEventListener("DOMContentLoaded", () => {
           card.getAttribute("data-category") === filterValue
         ) {
           card.classList.remove("hidden");
+          card.style.display = "flex";
         } else {
           card.classList.add("hidden");
+          card.style.display = "none";
         }
       });
     });
   });
 
-  // 6. Clipboard Copy for Email & Phone
+  // 6. Interactive Developer Terminal Tabs
+  const terminalTabs = document.querySelectorAll(".terminal-tab");
+  const terminalPanels = document.querySelectorAll(".terminal-panel");
+
+  terminalTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      terminalTabs.forEach(t => t.classList.remove("active"));
+      terminalPanels.forEach(p => p.classList.remove("active"));
+
+      tab.classList.add("active");
+      const targetPanelId = tab.getAttribute("data-tab");
+      const targetPanel = document.getElementById(targetPanelId);
+      if (targetPanel) {
+        targetPanel.classList.add("active");
+      }
+    });
+  });
+
+  // Copy code in terminal
+  const copyTerminalBtn = document.getElementById("copy-terminal-btn");
+  if (copyTerminalBtn) {
+    copyTerminalBtn.addEventListener("click", async () => {
+      const activePanel = document.querySelector(".terminal-panel.active pre");
+      if (activePanel) {
+        try {
+          await navigator.clipboard.writeText(activePanel.innerText);
+          const orig = copyTerminalBtn.innerHTML;
+          copyTerminalBtn.innerHTML =
+            '<i class="fa-solid fa-check"></i> Copied!';
+          setTimeout(() => {
+            copyTerminalBtn.innerHTML = orig;
+          }, 2000);
+        } catch (e) {
+          console.error("Clipboard copy error:", e);
+        }
+      }
+    });
+  }
+
+  // 7. Interactive Good Vibes / Cheer Easter Egg Button
+  const cheerBtn = document.getElementById("cheer-btn");
+  const cheerCountSpan = document.getElementById("cheer-count");
+  let cheerCount = parseInt(
+    localStorage.getItem("anjali_portfolio_cheers") || "42",
+    10
+  );
+  if (cheerCountSpan) {
+    cheerCountSpan.textContent = cheerCount;
+  }
+
+  if (cheerBtn) {
+    cheerBtn.addEventListener("click", e => {
+      cheerCount++;
+      localStorage.setItem("anjali_portfolio_cheers", cheerCount);
+      if (cheerCountSpan) {
+        cheerCountSpan.textContent = cheerCount;
+      }
+
+      // Create floating sparkle/heart burst
+      createCheerParticles(e.clientX, e.clientY);
+
+      cheerBtn.classList.add("cheered");
+      setTimeout(() => cheerBtn.classList.remove("cheered"), 600);
+    });
+  }
+
+  function createCheerParticles(x, y) {
+    const emojis = ["💖", "✨", "🌸", "💜", "🚀", "💻", "⭐"];
+    for (let i = 0; i < 7; i++) {
+      const particle = document.createElement("span");
+      particle.className = "floating-cheer-particle";
+      particle.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+      const angle = (Math.PI * 2 * i) / 7;
+      const distance = 40 + Math.random() * 50;
+      const destX = Math.cos(angle) * distance;
+      const destY = Math.sin(angle) * distance - 30;
+
+      particle.style.left = `${x}px`;
+      particle.style.top = `${y}px`;
+      particle.style.setProperty("--tx", `${destX}px`);
+      particle.style.setProperty("--ty", `${destY}px`);
+
+      document.body.appendChild(particle);
+
+      setTimeout(() => {
+        particle.remove();
+      }, 1000);
+    }
+  }
+
+  // 8. Clipboard Copy for Email & Phone
   const copyBtns = document.querySelectorAll(".copy-btn");
 
   copyBtns.forEach(btn => {
@@ -129,76 +234,125 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         await navigator.clipboard.writeText(textToCopy);
         btn.classList.add("copied");
-        if (tooltip) tooltip.textContent = "Copied!";
+        if (tooltip) tooltip.textContent = "Copied! 💜";
 
         setTimeout(() => {
           btn.classList.remove("copied");
           if (tooltip) tooltip.textContent = "Copy";
-        }, 2000);
+        }, 2200);
       } catch (err) {
         console.error("Failed to copy text: ", err);
       }
     });
   });
 
-  // 7. Project Details Modal Content & Handling
+  // 9. Project Details Modal Content & Handling
   const projectDetails = {
     "project-1": {
-      title: "AI-Based Doctor-Patient Appointment System",
+      title: "AI-Based Doctor-Patient Appointment & Symptom Triage",
       category: "Healthcare AI & Full-Stack Platform",
       period: "Jun – Aug 2026",
+      tagline:
+        "Connecting patients to the right medical specialists with zero scheduling friction.",
       tech: [
         "Python",
         "Machine Learning",
         "Flask",
         "MySQL",
-        "HTML5/CSS3",
+        "HTML5 / CSS3",
         "REST APIs"
       ],
       summary:
-        "An intelligent appointment booking platform designed to bridge the gap between patient symptoms and specialized medical care, automating doctor scheduling and availability management.",
+        "An intelligent healthcare scheduling web platform that simplifies clinic visits. Instead of guessing which specialist to visit, patients input symptoms and the system recommends the ideal specialty while handling conflict-free appointment booking in real-time.",
+      story:
+        "The inspiration came from seeing how overwhelmed outpatient clinics get with mismatched specialist bookings. I built a lightweight supervised triage heuristic that maps patient symptom keywords to specialties (Cardiology, Neurology, Dermatology, Orthopedics) and saves clinician time.",
       features: [
-        "Symptom Classification Engine: Leveraged supervised machine learning heuristics to map reported user symptoms directly to appropriate doctor specialties (e.g. Cardiology, Neurology, Orthopedics).",
-        "Smart Availability Calendar: Real-time conflict-free slot booking algorithm eliminating double bookings and optimizing clinician schedules.",
-        "Relational Schema in MySQL: High-integrity database design for doctors, patients, consultation logs, and medical records.",
-        "Flask REST API Backend: Modular endpoints handling authentication, profile management, appointment booking, and email confirmations."
+        "Intelligent Symptom Triage: Supervised NLP/ML heuristics categorize reported symptoms and route patients to specialized doctor profiles.",
+        "Real-Time Slot Engine: Conflict-free scheduling algorithm checking doctor availability, eliminating double bookings, and providing instant confirmation.",
+        "Relational Schema in MySQL: High-integrity relational tables modeling doctors, patients, appointment statuses, and historical consultation logs.",
+        "Flask RESTful Backend: Clean modular API endpoints handling authentication, profile updates, appointment CRUD, and automated email notices."
       ],
-      githubUrl: "https://github.com/anjalitiwarics27-coder/Anjali"
+      githubUrl:
+        "https://github.com/anjalitiwarics27-coder/Ai_based_Doctor_Patient_Appointment",
+      liveUrl: "#"
     },
     "project-2": {
-      title: "Library Management System (AI-Enhanced)",
-      category: "System Software & File Architecture",
+      title: "Library Management System (AI-Enhanced Heuristic)",
+      category: "System Software & Low-Level C Architecture",
       period: "March 2025",
+      tagline:
+        "Building a high-performance database and recommendation engine entirely in pure C.",
       tech: [
         "C Language",
-        "File Handling",
+        "Binary File I/O",
         "AI Heuristics",
         "Data Structures",
-        "CRUD Operations"
+        "Memory Management"
       ],
       summary:
-        "A high-performance, file-based Library Management System developed in C Language that replaces paper logging with structured binary file management and an intelligent recommendation heuristic.",
+        "A blazing fast, dependency-free Library Management System written in standard C. It provides transactional data storage via binary files and incorporates an intelligent substitute-recommendation heuristic when books are out of stock.",
+      story:
+        "I wanted to understand how database engines and operating systems manage storage under the hood. By handling binary files, pointer arithmetic, and struct serialization manually, I built a reliable system that runs with near-zero memory footprint.",
       features: [
-        "Full CRUD Operations: Create, Read, Update, and Delete book inventories, student borrowing records, and fine trackers.",
-        "Low-Level File Handling: Utilized binary data files for transactional persistence and low memory overhead without requiring an external database server.",
-        "AI Recommendation Logic: When a requested book is checked out or out-of-stock, the heuristic engine parses genre and author metadata to automatically recommend the closest available substitute.",
-        "Data Validation: Strict input sanitization and boundary checking to prevent buffer overflows and file corruption."
+        "Full CRUD Inventory Architecture: Create, search, update, and remove book records, student member profiles, borrow logs, and overdue fine tallies.",
+        "Binary File Persistence: Direct disk read/write serialization preserving data across program restarts with ACID-like transactional safety.",
+        "Smart Recommendation Heuristic: When a requested book is unavailable, the heuristic evaluates genre similarity, author proximity, and difficulty level to suggest available alternative titles.",
+        "Defensive Programming: Memory boundaries checked rigorously to prevent buffer overflows and pointer leaks."
       ],
-      githubUrl: "https://github.com/anjalitiwarics27-coder/Anjali"
+      githubUrl:
+        "https://github.com/anjalitiwarics27-coder/lib_management_using_ai",
+      liveUrl: "https://lib-management-using-ai.vercel.app/"
     },
     "project-3": {
-      title: "Unique Elephant ID Recognition System using Deep Learning",
-      category: "Computer Vision & Wildlife Conservation",
+      title: "Unique Elephant ID Recognition System with Deep Learning",
+      category: "Computer Vision & Wildlife Conservation Tech",
       period: "Mar – Apr 2026",
-      tech: ["Python", "OpenCV", "TensorFlow", "Keras", "CNN", "NumPy"],
-      summary:
-        "Developed during the research internship at the Wildlife Institute of India to solve the difficult ecological problem of non-invasive individual elephant recognition in wild habitats.",
-      features: [
-        "Image Preprocessing Pipeline: Employs OpenCV for background contrast enhancement, contour segmentation, and ear edge detection under challenging forest lighting.",
-        "CNN Feature Extractor: Deep convolutional networks trained to recognize unique morphological biometric identifiers such as ear cut contours, hole patterns, and tusk configurations.",
-        "Conservation Impact: Provides wildlife biologists and forest rangers with an automated tool for ecological census tracking, mitigating human-elephant conflict without physical tagging."
+      tagline:
+        "Non-invasive computer vision for wildlife protection at Wildlife Institute of India.",
+      tech: [
+        "Python",
+        "OpenCV",
+        "TensorFlow / Keras",
+        "CNN",
+        "NumPy",
+        "Computer Vision"
       ],
-      githubUrl: "https://github.com/anjalitiwarics27-coder"
+      summary:
+        "Developed during my research internship at the Wildlife Institute of India, this deep learning system identifies individual wild elephants from field camera-trap imagery without invasive physical tagging.",
+      story:
+        "Wild elephants frequently come into conflict with human settlements, and traditional tagging is dangerous and stressful for animals. Working with conservation researchers, I engineered computer vision pipelines to isolate unique anatomical landmarks like ear venation, tears, and tusks.",
+      features: [
+        "OpenCV Image Pipeline: Contrast-limited adaptive histogram equalization (CLAHE), bilateral noise filtering, and edge segmentation to process variable forest lighting and foliage occlusions.",
+        "CNN Morphological Classifier: Deep convolutional network trained to extract and match fine-grained anatomical features (ear margins, notch contours, tusk presence).",
+        "Ecological Conservation Impact: Equips researchers and forest rangers with automated census capabilities, enabling humane anti-poaching tracking and conflict prevention."
+      ],
+      githubUrl: "https://github.com/anjalitiwarics27-coder",
+      liveUrl: null
+    },
+    "project-4": {
+      title: "Job Portal Smart Recommendation Engine",
+      category: "Recommendation Systems & Software Engineering",
+      period: "Jun – Aug 2026",
+      tagline:
+        "Intelligent candidate-job matching engine built at DigiSamaksh Private Limited.",
+      tech: [
+        "Python",
+        "Recommendation Engine",
+        "Data Processing",
+        "REST APIs",
+        "Git"
+      ],
+      summary:
+        "Engineered an automated matching system that evaluates candidate technical skillsets, career history, and role preferences against employer job descriptions to deliver high-confidence match scores.",
+      story:
+        "Built during my internship at DigiSamaksh, this engine solved applicant drop-off by presenting applicants with jobs that matched their actual technical strengths, while helping recruiters discover qualified talent faster.",
+      features: [
+        "Skill & Experience Extraction: Cleans and tokenizes unstructured candidate profiles and job requirements for semantic matching.",
+        "Weighted Ranking Heuristic: Multi-factor scoring taking into account core technical languages, frameworks, domain experience, and candidate preferences.",
+        "API Integration: Seamlessly connected into the existing company platform pipeline with rapid query responses."
+      ],
+      githubUrl: "https://github.com/anjalitiwarics27-coder",
+      liveUrl: null
     }
   };
 
@@ -215,48 +369,53 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!project) return;
 
       modalContent.innerHTML = `
-        <div style="margin-bottom: 16px;">
-          <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.05em;">${
+        <div class="modal-inner-header">
+          <span class="modal-badge"><i class="fa-solid fa-sparkles"></i> ${
             project.category
-          } (${project.period})</span>
-          <h2 style="font-size: 1.5rem; margin-top: 4px; margin-bottom: 12px;">${
-            project.title
-          }</h2>
-          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">${
-            project.summary
+          } · ${project.period}</span>
+          <h2 class="modal-title">${project.title}</h2>
+          <p class="modal-tagline">${project.tagline}</p>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-heading"><i class="fa-solid fa-lightbulb" style="color: var(--accent-primary);"></i> Project Overview & Inspiration</h4>
+          <p class="modal-desc">${project.summary}</p>
+          <p class="modal-story"><strong>The Backstory:</strong> ${
+            project.story
           }</p>
         </div>
 
-        <div style="margin-bottom: 24px;">
-          <h4 style="font-size: 1rem; margin-bottom: 10px; color: var(--text-primary);"><i class="fa-solid fa-list-check" style="color: var(--accent-primary); margin-right: 6px;"></i> Technical Highlights:</h4>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
+        <div class="modal-section">
+          <h4 class="modal-heading"><i class="fa-solid fa-code-commit" style="color: var(--accent-emerald);"></i> Technical Highlights & Architecture:</h4>
+          <ul class="modal-features-list">
             ${project.features
-              .map(
-                f =>
-                  `<li style="position: relative; padding-left: 20px; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;"><span style="position: absolute; left: 0; color: var(--accent-emerald);">✔</span>${f}</li>`
-              )
+              .map(f => `<li><span class="feature-bullet">✨</span>${f}</li>`)
               .join("")}
           </ul>
         </div>
 
-        <div style="margin-bottom: 28px;">
-          <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">Technologies Used:</h4>
-          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <div class="modal-section">
+          <h4 class="modal-heading"><i class="fa-solid fa-microchip" style="color: var(--accent-purple);"></i> Tech Stack:</h4>
+          <div class="modal-tech-pills">
             ${project.tech
-              .map(
-                t =>
-                  `<span class="tech-pill" style="font-size: 0.8rem; padding: 4px 12px; background: rgba(99, 102, 241, 0.12); border-color: rgba(99, 102, 241, 0.25); color: var(--accent-primary);">${t}</span>`
-              )
+              .map(t => `<span class="tech-pill">${t}</span>`)
               .join("")}
           </div>
         </div>
 
-        <div style="display: flex; gap: 12px;">
+        <div class="modal-actions-row">
           <a href="${
             project.githubUrl
           }" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex: 1;">
-            <i class="fa-brands fa-github"></i> View Repository
+            <i class="fa-brands fa-github"></i> <span>View Code on GitHub</span>
           </a>
+          ${
+            project.liveUrl && project.liveUrl !== "#"
+              ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="flex: 1;">
+                   <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>View Live App</span>
+                 </a>`
+              : ""
+          }
         </div>
       `;
 
@@ -265,43 +424,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  modalCloseBtn.addEventListener("click", closeModal);
-  modalBackdrop.addEventListener("click", e => {
-    if (e.target === modalBackdrop) closeModal();
-  });
-
-  function closeModal() {
-    modalBackdrop.classList.remove("active");
-    document.body.style.overflow = "";
+  if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener("click", e => {
+      if (e.target === modalBackdrop) closeModal();
+    });
   }
 
-  // 8. Contact Form Handling
+  function closeModal() {
+    if (modalBackdrop) {
+      modalBackdrop.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  }
+
+  // 10. Contact Form Handling
   const contactForm = document.getElementById("contact-form");
   const formStatus = document.getElementById("form-status-message");
 
-  contactForm.addEventListener("submit", e => {
-    e.preventDefault();
+  if (contactForm && formStatus) {
+    contactForm.addEventListener("submit", e => {
+      e.preventDefault();
 
-    const name = document.getElementById("form-name").value;
-    const email = document.getElementById("form-email").value;
-    const subject = document.getElementById("form-subject").value;
-    const message = document.getElementById("form-message").value;
+      const name = document.getElementById("form-name").value;
+      const email = document.getElementById("form-email").value;
+      const subject = document.getElementById("form-subject").value;
+      const message = document.getElementById("form-message").value;
 
-    // Simulate sending with helpful user feedback and mailto fallback option
-    formStatus.className = "form-status-message success";
-    formStatus.innerHTML = `
-      <strong><i class="fa-solid fa-circle-check"></i> Thank you, ${name}!</strong><br>
-      Your message has been received. You can also send this directly via email to <a href="mailto:anjali.tiwari.cs27@iilm.edu?subject=${encodeURIComponent(
-        subject
-      )}&body=${encodeURIComponent(
-      message
-    )}" style="color: inherit; text-decoration: underline;">anjali.tiwari.cs27@iilm.edu</a>.
-    `;
+      formStatus.className = "form-status-message success";
+      formStatus.innerHTML = `
+        <strong><i class="fa-solid fa-heart" style="color: #ec4899;"></i> Thank you so much, ${name}!</strong><br>
+        Your message has reached me. I'll get back to you within 24 hours! You can also email me directly at <a href="mailto:anjali.tiwari.cs27@iilm.edu?subject=${encodeURIComponent(
+          subject
+        )}&body=${encodeURIComponent(
+        message
+      )}" style="color: inherit; text-decoration: underline; font-weight: 700;">anjali.tiwari.cs27@iilm.edu</a> ✨
+      `;
+      formStatus.style.display = "block";
 
-    contactForm.reset();
+      contactForm.reset();
 
-    setTimeout(() => {
-      formStatus.style.display = "none";
-    }, 9000);
-  });
+      setTimeout(() => {
+        formStatus.style.display = "none";
+      }, 10000);
+    });
+  }
 });
