@@ -221,13 +221,13 @@ const openSource = {
 const bigProjects = {
   title: "Academic Projects",
   subtitle:
-    "ACADEMIC PROJECTS FOCUSED ON AI, MACHINE LEARNING, AND SOFTWARE DEVELOPMENT",
+    "ACADEMIC PROJECTS IN AI, MACHINE LEARNING, AND SOFTWARE DEVELOPMENT",
   projects: [
     {
       image: process.env.PUBLIC_URL + "/project-images/doctor-appointment.svg",
       projectName: "AI Hospital Recommendation System",
       projectDesc:
-        "An AI-based system that helps recommend suitable hospitals/doctors based on patient needs and inputs, improving accessibility and decision-making in healthcare. Built with a focus on intelligent matching, practical usability, and efficient appointment/recommendation flow.",
+        "An AI-based application that recommends suitable hospitals/doctors based on patient inputs to support better healthcare decisions. It focuses on smart matching, a clear user flow, and practical appointment/recommendation assistance.",
       footerLink: [
         {
           name: "View on GitHub",
@@ -244,7 +244,7 @@ const bigProjects = {
       projectName:
         "AI-Based Student Performance Prediction and Personalized Learning Recommendation",
       projectDesc:
-        "A machine learning-based academic project that predicts student performance and provides personalized learning recommendations to support better learning outcomes. Designed to analyze student data, identify performance patterns, and suggest relevant improvement paths.",
+        "A machine learning project that predicts student performance and provides personalized learning recommendations. It analyzes academic data to identify patterns and suggest targeted improvements for better learning outcomes.",
       footerLink: [
         {
           name: "View on GitHub",
@@ -260,7 +260,7 @@ const bigProjects = {
       image: process.env.PUBLIC_URL + "/project-images/library.svg",
       projectName: "Library Management System (AI-Enhanced)",
       projectDesc:
-        "A library management system with core record management features and AI-enhanced support for smarter book suggestions when a searched title is unavailable. Focused on organized data handling, usability, and efficient library operations.",
+        "A library management system for handling books, users, and records efficiently, with AI-enhanced suggestions for alternative books when a title is unavailable. Designed for organized data management and a smooth user experience.",
       footerLink: [
         {
           name: "View on GitHub",
