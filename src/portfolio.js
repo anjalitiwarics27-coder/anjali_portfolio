@@ -235,7 +235,7 @@ const bigProjects = {
         },
         {
           name: "View Live",
-          url: "#"
+          url: "https://ai-hospital-appointment-system-fron.vercel.app/"
         }
       ]
     },
@@ -252,7 +252,7 @@ const bigProjects = {
         },
         {
           name: "View Live",
-          url: "#"
+          url: "https://student-performance-frontend-three.vercel.app/"
         }
       ]
     },
