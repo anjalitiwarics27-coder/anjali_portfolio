@@ -1,14 +1,13 @@
 @import "../../_globalColor";
 
 .main-button {
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  background: linear-gradient(135deg, #fb7185 0%, #ec4899 45%, #c084fc 100%);
   border: solid 1px transparent;
-  color: $textColorDark;
+  color: #ffffff !important;
   font-weight: 700;
   width: max-content;
-  padding: 13px 24px;
+  padding: 12px 24px;
   margin-right: 0;
-  text-transform: uppercase;
   border-radius: 9999px;
   text-align: center;
   text-decoration: none;
@@ -17,19 +16,19 @@
   justify-content: center;
   gap: 8px;
   margin-top: 0;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 6px 18px rgba(236, 72, 153, 0.38);
   transition: all 0.3s ease;
+  letter-spacing: 0.02em;
 }
 .main-button:hover {
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-  color: $textColorDark;
-  transition: all 0.3s ease;
-  transform: translateY(-3px);
-  box-shadow: 0 14px 28px rgba(99, 102, 241, 0.5);
+  background: linear-gradient(135deg, #fb7185 0%, #ec4899 45%, #c084fc 100%);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(236, 72, 153, 0.55);
 }
 .main-button::after {
   content: "";
@@ -50,39 +49,10 @@
 .main-button:hover::after {
   left: 125%;
 }
-.download-link-button {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid $lightBorder1 !important;
-  color: inherit !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(8px);
-}
-.download-link-button:hover {
-  background: rgba(255, 255, 255, 0.16) !important;
-  border-color: rgba(99, 102, 241, 0.45) !important;
-  color: inherit !important;
-}
-.download-link-button::after {
-  display: none;
-}
-.project-button {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-.project-button > .main-button {
-  margin-right: 0 !important;
-}
-/* Media Query */
+
 @media (max-width: 768px) {
   .main-button {
-    font-size: 0.938rem;
-    padding: 12px 20px;
-    margin-right: 0px;
-  }
-}
-@media (max-width: 320px) {
-  .main-button {
-    font-size: 0.75rem;
+    font-size: 0.88rem;
+    padding: 10px 18px;
   }
 }

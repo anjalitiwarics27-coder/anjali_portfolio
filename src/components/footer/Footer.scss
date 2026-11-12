@@ -18,9 +18,9 @@
   border-top: 1px solid $lightBorder1;
   background: linear-gradient(
     135deg,
-    rgba(99, 102, 241, 0.06) 0%,
-    rgba(168, 85, 247, 0.04) 50%,
-    rgba(6, 182, 212, 0.05) 100%
+    rgba(236, 72, 153, 0.08) 0%,
+    rgba(192, 132, 252, 0.06) 50%,
+    rgba(56, 189, 248, 0.05) 100%
   );
 }
 
@@ -35,6 +35,7 @@
   font-size: 24px;
   font-weight: 800;
   text-decoration: none;
+  font-family: "JetBrains Mono", monospace;
   transition: transform 0.25s ease;
 }
 
@@ -43,11 +44,12 @@
 }
 
 .footer-logo-name {
-  font-family: "Agustina Regular";
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
+  color: #fcfaff;
+}
+.light .footer-logo-name {
+  color: #1f1430;
 }
 
 .footer-social {

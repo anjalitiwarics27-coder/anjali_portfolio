@@ -11,15 +11,17 @@ export default function Footer() {
           <div className="footer-div">
         <div className="footer-inner">
           <a href="/" className="footer-logo">
-            <span className="grey-color"> &lt;</span>
-            <span className="footer-logo-name">{greeting.username}</span>
-            <span className="grey-color">/&gt;</span>
+            <span className="logo-code"> &lt;</span>
+            <span className="footer-logo-name">Anjali<span className="logo-accent">.code 🌸</span></span>
+            <span className="logo-code">/&gt;</span>
           </a>
           <div className="footer-social">
             <SocialMedia />
           </div>
           <nav className="footer-links">
             <a href="#skills">Skills</a>
+            <span className="footer-dot">•</span>
+            <a href="#bento">Behind Code</a>
             <span className="footer-dot">•</span>
             <a href="#experience">Experiences</a>
             <span className="footer-dot">•</span>
@@ -31,10 +33,10 @@ export default function Footer() {
           </nav>
           <div className="footer-divider"></div>
           <p className={isDark ? "dark-mode footer-text" : "footer-text"}>
-            {emoji("Made with ❤️ by Anjali Tiwari")}
+            {emoji("Crafted with 💜, chai & clean algorithms by Anjali Tiwari")}
           </p>
           <p className="footer-tagline">
-            Building intelligent systems with AI, DSA &amp; full-stack engineering ✨
+            Proud woman in tech · No robotic templates — authentic human engineering ✨
           </p>
         </div>
       </div>

@@ -6,36 +6,38 @@ html {
 
 body {
   overflow-x: hidden;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
   background:
     radial-gradient(
         circle at 15% 10%,
-        rgba(99, 102, 241, 0.06) 0%,
-        transparent 40%
+        rgba(244, 114, 182, 0.1) 0%,
+        transparent 45%
       ),
     radial-gradient(
         circle at 85% 30%,
-        rgba(168, 85, 247, 0.05) 0%,
-        transparent 40%
+        rgba(192, 132, 252, 0.08) 0%,
+        transparent 45%
       ),
     radial-gradient(
         circle at 50% 90%,
-        rgba(6, 182, 212, 0.05) 0%,
-        transparent 45%
+        rgba(56, 189, 248, 0.06) 0%,
+        transparent 50%
       ),
-    $lightBackground3;
+    $lightBackground1;
   background-attachment: fixed;
+  color: $textColor;
 }
 
 .dark-mode {
-  background-color: $darkBackground;
-  color: white;
-  transition: "0.1s";
+  background-color: $darkBackground !important;
+  color: $textColorDark !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .main {
   width: 92%;
-  max-width: 1200px;
-  padding: 36px 10px;
+  max-width: 1220px;
+  padding: 40px 10px;
   margin: 0px auto;
 }
 
@@ -45,91 +47,35 @@ img {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #6366f1;
+  outline: 2px solid #ec4899;
   outline-offset: 3px;
   border-radius: 6px;
 }
 
 ::selection {
-  background: rgba(99, 102, 241, 0.3);
+  background: rgba(236, 72, 153, 0.35);
+  color: #ffffff;
 }
 
 ::-webkit-scrollbar {
   width: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: $lightBackground3;
+  background: $darkBackground;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  background: #2a2245;
   border-radius: 9999px;
+  border: 2px solid $darkBackground;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $buttonColor;
 }
 
-.dark-mode {
-  background-color: $darkBackground;
-  color: white;
-  transition: "0.1s";
-}
-
-/* Unified professional section header */
-.section-header {
-  text-align: center;
-  max-width: 760px;
-  margin: 0 auto 38px;
-}
-
-.section-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 16px;
-  background: rgba(99, 102, 241, 0.12);
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  border-radius: 9999px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #6366f1;
-  margin-bottom: 14px;
-}
-
-.section-heading {
-  font-size: 52px;
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin: 0 0 10px;
-}
-
-.section-heading .gradient-text {
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+.gradient-text {
+  background: linear-gradient(135deg, #fb7185 0%, #ec4899 45%, #c084fc 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.section-subtext {
-  color: $subTitle;
-  font-size: 15.5px;
-  line-height: 1.6;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .section-heading {
-    font-size: 34px;
-  }
-  .section-subtext {
-    font-size: 14px;
-  }
-  .main {
-    padding: 26px 6px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+  display: inline-block;
 }

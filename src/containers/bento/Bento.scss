@@ -1,0 +1,276 @@
+@import "../../_globalColor";
+
+.bento-container {
+  width: 92%;
+  max-width: 1220px;
+  padding: 60px 20px 40px;
+  margin: 0 auto;
+}
+
+.bento-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.bento-tag {
+  display: inline-block;
+  padding: 5px 16px;
+  background: rgba(244, 114, 182, 0.12);
+  border: 1px solid rgba(244, 114, 182, 0.3);
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ec4899;
+  margin-bottom: 12px;
+}
+
+.bento-title {
+  font-size: clamp(2rem, 3.6vw, 2.7rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.bento-subtitle {
+  font-size: 1.05rem;
+  color: #b0a9c7;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.bento-card {
+  background: rgba(19, 17, 36, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 114, 182, 0.18);
+  border-radius: 22px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35);
+}
+.light .bento-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(236, 72, 153, 0.18);
+  box-shadow: 0 10px 25px rgba(147, 51, 234, 0.08);
+}
+
+.bento-card:hover {
+  border-color: rgba(244, 114, 182, 0.48);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.45), 0 0 20px rgba(236, 72, 153, 0.18);
+}
+
+.bento-card-large {
+  grid-column: span 2;
+}
+.bento-card-span-2 {
+  grid-column: span 2;
+}
+
+.bento-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+.bento-icon-badge.icon-pink {
+  background: rgba(236, 72, 153, 0.15);
+  color: #ec4899;
+}
+.bento-icon-badge.icon-amber {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+}
+.bento-icon-badge.icon-mint {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+}
+.bento-icon-badge.icon-purple {
+  background: rgba(192, 132, 252, 0.15);
+  color: #c084fc;
+}
+.bento-icon-badge.icon-cyan {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}
+
+.bento-kicker {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #ec4899;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.bento-card-heading {
+  font-size: 1.28rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.35;
+  color: #fcfaff;
+}
+.light .bento-card-heading {
+  color: #1f1430;
+}
+
+.bento-text {
+  font-size: 0.94rem;
+  color: #b0a9c7;
+  line-height: 1.65;
+}
+.light .bento-text {
+  color: #5a4b6e;
+}
+
+.bento-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.bento-pill {
+  padding: 5px 12px;
+  background: rgba(244, 114, 182, 0.1);
+  border: 1px solid rgba(244, 114, 182, 0.25);
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #f472b6;
+}
+
+/* Terminal Card */
+.terminal-card {
+  padding: 0;
+  background: #0e0c1a;
+  border-color: rgba(192, 132, 252, 0.25);
+}
+
+.terminal-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 7px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot-red { background-color: #ff5f56; }
+.dot-yellow { background-color: #ffbd2e; }
+.dot-green { background-color: #27c93f; }
+
+.terminal-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.terminal-copy-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-family: "JetBrains Mono", monospace;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.terminal-copy-btn:hover {
+  background: #ec4899;
+  color: #ffffff;
+  border-color: #ec4899;
+}
+
+.terminal-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 6px 14px 0;
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.terminal-tab {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.82rem;
+  padding: 7px 14px;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.terminal-tab:hover {
+  color: #f1f5f9;
+}
+.terminal-tab.active {
+  background: #0e0c1a;
+  color: #f472b6;
+  border-bottom: 2px solid #f472b6;
+  font-weight: 600;
+}
+
+.terminal-code {
+  padding: 20px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+.terminal-code pre {
+  margin: 0;
+}
+
+/* Syntax Highlighting */
+.c-key { color: #f472b6; font-weight: 600; }
+.c-prop { color: #c084fc; }
+.c-str { color: #34d399; }
+.c-func { color: #38bdf8; }
+.c-com { color: #64748b; font-style: italic; }
+
+@media (max-width: 1080px) {
+  .bento-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .bento-card-large,
+  .bento-card-span-2 {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-card-large,
+  .bento-card-span-2 {
+    grid-column: span 1;
+  }
+}
+

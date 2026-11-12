@@ -6,10 +6,11 @@
 }
 
 /* header */
-
 .dark-menu {
-  background-color: $darkBackground !important;
+  background-color: rgba(12, 11, 20, 0.92) !important;
   color: $textColorDark;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .dark-menu li a {
@@ -17,16 +18,19 @@
 }
 
 .dark-menu li a:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  color: $textColorDark !important;
+  background-color: rgba(244, 114, 182, 0.15) !important;
+  color: #f472b6 !important;
 }
 
 .header {
-  background-color: $lightBackground1;
+  background-color: rgba(252, 250, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   max-width: 100%;
-  padding: 14px 22px;
+  padding: 14px 28px;
   margin: 0px auto;
-  border-bottom: 1px solid $lightBorder1;
+  border-bottom: 1px solid rgba(244, 114, 182, 0.2);
+  transition: all 0.3s ease;
 }
 
 .header ul {
@@ -34,6 +38,8 @@
   padding: 0;
   list-style: none;
   overflow: hidden;
+  display: flex;
+  align-items: center;
   gap: 4px;
 }
 
@@ -43,46 +49,112 @@
 
 .header li a {
   display: block;
-  padding: 10px 14px;
+  padding: 8px 14px;
   color: $textColor;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 15px;
-  border-radius: 6px;
-  transition: background-color 0.2s ease;
+  font-weight: 600;
+  font-size: 14.5px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .header li a:hover,
 .header .menu-btn:hover {
-  background-color: $headerHoverBG;
+  background-color: rgba(244, 114, 182, 0.12);
+  color: #ec4899;
 }
 
 .header .logo {
-  display: block;
-  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 3px;
   float: left;
-  font-size: 1.5em;
+  font-size: 1.35em;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
   text-decoration: none;
-  margin-top: 4px;
+  margin-top: 6px;
   line-height: normal;
 }
 
-.header .logo-name {
-  font-family: "Agustina Regular";
-  font-weight: bold;
-  font-variant-ligatures: no-common-ligatures;
-  -webkit-font-variant-ligatures: no-common-ligatures;
-  padding: 0 6px;
-  color: $textColor;
+.logo-code {
+  color: #c084fc;
 }
 
-.dark-menu .logo-name {
-  color: $textColorDark;
+.header .logo-name {
+  font-family: "Outfit", "Inter", sans-serif;
+  font-weight: 800;
+  color: #fcfaff;
+  letter-spacing: -0.02em;
+}
+
+.light .header .logo-name {
+  color: #1f1430;
+}
+
+.logo-accent {
+  background: linear-gradient(135deg, #fb7185 0%, #ec4899 45%, #c084fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+/* Header Cheer Button */
+.header-cheer-li {
+  display: flex;
+  align-items: center;
+  margin-left: 6px;
+}
+
+.header-cheer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(244, 114, 182, 0.12);
+  border: 1px solid rgba(244, 114, 182, 0.35);
+  border-radius: 9999px;
+  color: #ec4899;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header-cheer-btn:hover {
+  background: rgba(244, 114, 182, 0.25);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.35);
+}
+
+.header-cheer-btn.cheered {
+  transform: scale(1.15);
+}
+
+/* Floating particle */
+.floating-cheer-particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  font-size: 1.35rem;
+  animation: floatParticle 1s ease-out forwards;
+}
+
+@keyframes floatParticle {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0.8);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx), var(--ty)) scale(1.4);
+  }
 }
 
 /* menu */
-
 .header .menu {
   clear: both;
   max-height: 0;
@@ -90,18 +162,17 @@
 }
 
 /* menu icon */
-
 .header .menu-icon {
   cursor: pointer;
   display: inline-block;
   float: right;
-  padding: 28px 20px;
+  padding: 24px 16px;
   position: relative;
   user-select: none;
 }
 
 .header .menu-icon .navicon {
-  background: $iconBackground;
+  background: #333;
   display: block;
   height: 2px;
   position: relative;
@@ -110,12 +181,12 @@
 }
 
 .header .menu-icon .navicon-dark {
-  background: $textColorDark;
+  background: #fff;
 }
 
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-  background: $iconBackground;
+  background: #333;
   content: "";
   display: block;
   height: 100%;
@@ -126,13 +197,7 @@
 
 .header .menu-icon .navicon-dark:before,
 .header .menu-icon .navicon-dark:after {
-  background: $textColorDark !important;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
+  background: #fff;
 }
 
 .header .menu-icon .navicon:before {
@@ -144,52 +209,48 @@
 }
 
 /* menu btn */
-
 .header .menu-btn {
   display: none;
 }
 
-.header .menu-btn:checked ~ .menu {
-  max-height: 556px;
+.header .menu-btn:checked~.menu {
+  max-height: 480px;
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent !important;
+.header .menu-btn:checked~.menu-icon .navicon {
+  background: transparent;
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
+.header .menu-btn:checked~.menu-icon .navicon:before {
   transform: rotate(-45deg);
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
+.header .menu-btn:checked~.menu-icon .navicon:after {
   transform: rotate(45deg);
 }
 
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
   top: 0;
 }
 
 /* 48em = 768px */
-
-@media (min-width: 48em) {
+@media (min-width: 58em) {
   .header li {
     float: left;
   }
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+  .header li a {
+    padding: 8px 12px;
   }
+
   .header .menu {
+    clear: none;
+    float: right;
     max-height: none;
   }
+
   .header .menu-icon {
     display: none;
-  }
-}
-@media (max-width: 960px) and (min-width: 768px) {
-  .header {
-    font-size: 12px;
   }
 }
