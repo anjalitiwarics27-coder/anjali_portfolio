@@ -23,9 +23,7 @@ export default function Greeting() {
                 Open for Software Engineering &amp; AI Roles
               </div>
               <h1
-                className={
-                  isDark ? "dark-mode greeting-text" : "greeting-text"
-                }
+                className={isDark ? "dark-mode greeting-text" : "greeting-text"}
               >
                 {" "}
                 {greeting.title}{" "}
@@ -86,7 +84,10 @@ export default function Greeting() {
                   <span>Python &amp; AI</span>
                 </div>
                 <div className="hero-badge hero-badge-2">
-                  <i className="fas fa-laptop-code" style={{color: "#a855f7"}}></i>
+                  <i
+                    className="fas fa-laptop-code"
+                    style={{color: "#a855f7"}}
+                  ></i>
                   <span>C++ &amp; DSA</span>
                 </div>
                 <div className="hero-badge hero-badge-3">

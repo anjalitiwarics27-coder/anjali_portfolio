@@ -96,9 +96,7 @@ export default function StartupProject() {
                               }
                               onClick={() => openUrlInNewTab(link.url)}
                               title={
-                                comingSoon
-                                  ? "Live demo coming soon"
-                                  : link.name
+                                comingSoon ? "Live demo coming soon" : link.name
                               }
                               style={comingSoon ? {opacity: 0.6} : undefined}
                             >

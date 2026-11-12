@@ -36,7 +36,8 @@ export default function Footer() {
             {emoji("Made with ❤️ by Anjali Tiwari")}
           </p>
           <p className="footer-tagline">
-            Building intelligent systems with AI, DSA &amp; full-stack engineering ✨
+            Building intelligent systems with AI, DSA &amp; full-stack
+            engineering ✨
           </p>
         </div>
       </div>

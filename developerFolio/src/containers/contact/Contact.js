@@ -20,14 +20,16 @@ export default function Contact() {
           </h1>
           <p
             className={
-              isDark ? "dark-mode contact-subtitle" : "subTitle contact-subtitle"
+              isDark
+                ? "dark-mode contact-subtitle"
+                : "subTitle contact-subtitle"
             }
           >
             {contactInfo.subtitle}
           </p>
           <p className="contact-tagline">
-            Software engineer opportunities, internships &amp; collaborative tech
-            projects — let&apos;s build something amazing together ✨
+            Software engineer opportunities, internships &amp; collaborative
+            tech projects — let&apos;s build something amazing together ✨
           </p>
         </div>
 

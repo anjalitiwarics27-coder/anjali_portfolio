@@ -17,7 +17,8 @@ export default function WorkExperience() {
                 Ex<span className="exp-gradient-text">periences</span> 💼
               </h1>
               <p className="exp-subtitle">
-                Internships delivering AI systems, deep learning &amp; full-stack solutions
+                Internships delivering AI systems, deep learning &amp;
+                full-stack solutions
               </p>
               <div className="experience-cards-div">
                 {workExperiences.experience.map((card, i) => {

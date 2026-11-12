@@ -16,7 +16,8 @@ export default function Education() {
             <span className="gradient-text">cation</span>
           </h1>
           <p className="section-subtext">
-            B.Tech CSE @ IILM University — strong foundation in CS, AI/ML &amp; software engineering
+            B.Tech CSE @ IILM University — strong foundation in CS, AI/ML &amp;
+            software engineering
           </p>
         </div>
         <div className="education-card-container">
