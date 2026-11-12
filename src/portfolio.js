@@ -175,7 +175,7 @@ const workExperiences = {
     {
       role: "Software Development Intern",
       company: "DigiSamaksh Private Limited",
-      companylogo: "company-images/digisamaksh.svg",
+      companylogo: process.env.PUBLIC_URL + "/company-images/digisamaksh.svg",
       date: "Jun 1 – Aug 10, 2026",
       desc: "Job Portal Recommendation System: Designed and developed an intelligent recommendation system for a job portal to match candidates with relevant job listings based on skills, experience, and preferences.",
       descBullets: [
@@ -186,7 +186,7 @@ const workExperiences = {
     {
       role: "Research Intern",
       company: "Wildlife Institute of India",
-      companylogo: "company-images/wildlife.svg",
+      companylogo: process.env.PUBLIC_URL + "/company-images/wildlife.svg",
       date: "Mar – Apr 2026",
       desc: "Unique Elephant ID Recognition System using Deep Learning: Developed a deep learning-based computer vision system to identify individual elephants using image recognition.",
       descBullets: [
@@ -197,7 +197,7 @@ const workExperiences = {
     {
       role: "Java Full Stack Developer (Grade: O - Outstanding)",
       company: "EduSkills Virtual Internship (AICTE)",
-      companylogo: "company-images/eduskills.svg",
+      companylogo: process.env.PUBLIC_URL + "/company-images/eduskills.svg",
       date: "Jan – Mar 2026",
       desc: "Completed an intensive 10-week virtual internship on Java Full Stack Development, conducted through the National Internship Portal in association with IILM University, Greater Noida.",
       descBullets: [
@@ -224,7 +224,7 @@ const bigProjects = {
     "SYSTEM-LEVEL AND AI-POWERED PROJECTS SHOWCASING FULL-STACK & AI EXPERTISE",
   projects: [
     {
-      image: "project-images/doctor-appointment.svg",
+      image: process.env.PUBLIC_URL + "/project-images/doctor-appointment.svg",
       projectName: "AI-Based Doctor-Patient Appointment System",
       projectDesc:
         "Developed an AI-powered appointment booking system connecting doctors and patients, with smart scheduling and availability management. Implemented automated appointment recommendations based on symptoms and doctor specialization. Built using Python, Machine Learning, Flask, and MySQL.",
@@ -236,7 +236,7 @@ const bigProjects = {
       ]
     },
     {
-      image: "project-images/library.svg",
+      image: process.env.PUBLIC_URL + "/project-images/library.svg",
       projectName: "Library Management System (AI-Enhanced)",
       projectDesc:
         "Built a robust file-based Library Management System using C Language with full CRUD operations to manage books, users, and transactions. Integrated a basic AI-based recommendation feature to suggest alternative books when a searched title is unavailable.",
@@ -267,7 +267,7 @@ const achievementSection = {
       title: "Web Development Certification",
       subtitle:
         "Certified by EduSkills (March 2026). Hands-on proficiency in modern responsive web technologies, HTML, CSS, JavaScript, and full-stack concepts.",
-      image: require("./assets/images/pwaLogo.webp"),
+      image: null,
       imageAlt: "EduSkills Certification",
       footerLink: [
         {
@@ -280,8 +280,8 @@ const achievementSection = {
       title: "MySQL Basics Certification",
       subtitle:
         "Certified by Great Learning (November 2024). Mastery in relational database design, indexing, normalization, and complex SQL queries.",
-      image: require("./assets/images/codeInLogo.webp"),
-      imageAlt: "Great Learning Logo",
+      image: null,
+      imageAlt: "Great Learning Certificate",
       footerLink: [
         {
           name: "Great Learning",
@@ -293,8 +293,8 @@ const achievementSection = {
       title: "Java Programming Certification",
       subtitle:
         "Certified by Great Learning (August 2024). Comprehensive coverage of Object-Oriented Programming (OOP), Data Structures, and Core Java development.",
-      image: require("./assets/images/codeInLogo.webp"),
-      imageAlt: "Great Learning Logo",
+      image: null,
+      imageAlt: "Great Learning Certificate",
       footerLink: [
         {
           name: "Great Learning",
@@ -306,8 +306,8 @@ const achievementSection = {
       title: "C & Python Programming Certifications",
       subtitle:
         "Certified in C Programming Language (March 2024) and Python Programming (July 2023) by Infosys / Springboard.",
-      image: require("./assets/images/googleAssistantLogo.webp"),
-      imageAlt: "Infosys Springboard Logo",
+      image: null,
+      imageAlt: "Infosys Springboard Certificate",
       footerLink: [
         {
           name: "Infosys Springboard",
@@ -319,15 +319,15 @@ const achievementSection = {
       title: "NCC 'A' Certificate Holder",
       subtitle:
         "Earned NCC 'A' Certificate (2019–2020). Demonstrated discipline, teamwork, physical fitness, and leadership through active national cadet corps activities.",
-      image: require("./assets/images/googleAssistantLogo.webp"),
-      imageAlt: "NCC Logo",
+      image: null,
+      imageAlt: "NCC Certificate",
       footerLink: []
     },
     {
       title: "House Captain & Basketball Team Captain",
       subtitle:
         "Nilgiri House Captain and Basketball Team Captain (2022–2023). Led athletic teams, organized major competitive events, and fostered collaborative team culture.",
-      image: require("./assets/images/googleAssistantLogo.webp"),
+      image: null,
       imageAlt: "Leadership & Sports",
       footerLink: []
     }
