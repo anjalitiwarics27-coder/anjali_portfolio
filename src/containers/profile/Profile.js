@@ -12,9 +12,7 @@ const defaultProfile = {
   id: "default-profile",
   name: "Anjali Tiwari",
   bio: "Aspiring Software Engineer passionate about AI/ML, problem solving, and building practical software solutions.",
-  avatarUrl:
-    process.env.PUBLIC_URL +
-    "/Anjali_image.jpeg",
+  avatarUrl: process.env.PUBLIC_URL + "/Anjali_image.jpeg",
   location: "South Delhi, India",
   hireable: "Yes"
 };

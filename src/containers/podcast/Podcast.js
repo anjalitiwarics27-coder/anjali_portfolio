@@ -13,39 +13,37 @@ export default function Podcast() {
     return null;
   }
   return (
-          <div className="main">
-        <div className="podcast-header">
-          <h1 className="podcast-header-title">{podcastSection.title}</h1>
-          <p
-            className={
-              isDark
-                ? "dark-mode podcast-header-subtitle"
-                : "subTitle podcast-header-subtitle"
-            }
-          >
-            {podcastSection.subtitle}
-          </p>
-        </div>
-        <div className="podcast-main-div">
-          {podcastSection.podcast.map((podcastLink, i) => {
-            if (!podcastLink) {
-              console.log(
-                `Podcast link for ${podcastSection.title} is missing`
-              );
-            }
-            return (
-              <div key={i}>
-                <iframe
-                  className="podcast"
-                  src={podcastLink}
-                  frameBorder="0"
-                  scrolling="no"
-                  title="Podcast"
-                ></iframe>
-              </div>
-            );
-          })}
-        </div>
+    <div className="main">
+      <div className="podcast-header">
+        <h1 className="podcast-header-title">{podcastSection.title}</h1>
+        <p
+          className={
+            isDark
+              ? "dark-mode podcast-header-subtitle"
+              : "subTitle podcast-header-subtitle"
+          }
+        >
+          {podcastSection.subtitle}
+        </p>
       </div>
+      <div className="podcast-main-div">
+        {podcastSection.podcast.map((podcastLink, i) => {
+          if (!podcastLink) {
+            console.log(`Podcast link for ${podcastSection.title} is missing`);
+          }
+          return (
+            <div key={i}>
+              <iframe
+                className="podcast"
+                src={podcastLink}
+                frameBorder="0"
+                scrolling="no"
+                title="Podcast"
+              ></iframe>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }

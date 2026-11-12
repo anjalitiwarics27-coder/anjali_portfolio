@@ -69,7 +69,8 @@
 .bento-card:hover {
   border-color: rgba(244, 114, 182, 0.48);
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.45), 0 0 20px rgba(236, 72, 153, 0.18);
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.45),
+    0 0 20px rgba(236, 72, 153, 0.18);
 }
 
 .bento-card-large {
@@ -180,9 +181,15 @@
   height: 10px;
   border-radius: 50%;
 }
-.dot-red { background-color: #ff5f56; }
-.dot-yellow { background-color: #ffbd2e; }
-.dot-green { background-color: #27c93f; }
+.dot-red {
+  background-color: #ff5f56;
+}
+.dot-yellow {
+  background-color: #ffbd2e;
+}
+.dot-green {
+  background-color: #27c93f;
+}
 
 .terminal-title {
   font-family: "JetBrains Mono", monospace;
@@ -248,11 +255,23 @@
 }
 
 /* Syntax Highlighting */
-.c-key { color: #f472b6; font-weight: 600; }
-.c-prop { color: #c084fc; }
-.c-str { color: #34d399; }
-.c-func { color: #38bdf8; }
-.c-com { color: #64748b; font-style: italic; }
+.c-key {
+  color: #f472b6;
+  font-weight: 600;
+}
+.c-prop {
+  color: #c084fc;
+}
+.c-str {
+  color: #34d399;
+}
+.c-func {
+  color: #38bdf8;
+}
+.c-com {
+  color: #64748b;
+  font-style: italic;
+}
 
 @media (max-width: 1080px) {
   .bento-grid {
@@ -273,4 +292,3 @@
     grid-column: span 1;
   }
 }
-

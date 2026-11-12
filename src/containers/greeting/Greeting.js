@@ -17,26 +17,26 @@ export default function Greeting() {
           {/* Status Pill */}
           <div className="status-pill">
             <span className="status-dot"></span>
-            <span>Open for Software Engineering &amp; AI Roles · Summer 2026 ✨</span>
+            <span>
+              Open for Software Engineering &amp; AI Roles · Summer 2026 ✨
+            </span>
           </div>
 
-          <h1
-            className={isDark ? "dark-mode greeting-text" : "greeting-text"}
-          >
+          <h1 className={isDark ? "dark-mode greeting-text" : "greeting-text"}>
             Hi, I'm <span className="gradient-text">Anjali Tiwari</span>{" "}
             <span className="wave-emoji">👋</span>
           </h1>
 
           <h2 className="greeting-role">
             Software Developer · AI/ML Explorer ·{" "}
-            <span className="editorial-highlight">Crafting logic with empathy.</span>
+            <span className="editorial-highlight">
+              Crafting logic with empathy.
+            </span>
           </h2>
 
           <p
             className={
-              isDark
-                ? "dark-mode greeting-text-p"
-                : "greeting-text-p subTitle"
+              isDark ? "dark-mode greeting-text-p" : "greeting-text-p subTitle"
             }
           >
             {greeting.subTitle}
@@ -45,16 +45,25 @@ export default function Greeting() {
           {/* Quick Stats Badges */}
           <div className="hero-stats-row">
             <div className="hero-stat-badge">
-              <i className="fa fa-graduation-cap" style={{color: "#ec4899"}}></i>
-              <span><strong>9.3 CGPA</strong> @ IILM</span>
+              <i
+                className="fa fa-graduation-cap"
+                style={{color: "#ec4899"}}
+              ></i>
+              <span>
+                <strong>9.3 CGPA</strong> @ IILM
+              </span>
             </div>
             <div className="hero-stat-badge">
               <i className="fa fa-award" style={{color: "#fbbf24"}}></i>
-              <span><strong>Grade 'O'</strong> Full Stack</span>
+              <span>
+                <strong>Grade 'O'</strong> Full Stack
+              </span>
             </div>
             <div className="hero-stat-badge">
               <i className="fa fa-briefcase" style={{color: "#c084fc"}}></i>
-              <span><strong>3</strong> Internships</span>
+              <span>
+                <strong>3</strong> Internships
+              </span>
             </div>
             <div className="hero-stat-badge">
               <i className="fa fa-map-marker" style={{color: "#34d399"}}></i>
@@ -103,7 +112,10 @@ export default function Greeting() {
                 <span>Python &amp; AI</span>
               </div>
               <div className="floating-badge badge-bottom-left">
-                <i className="fas fa-laptop-code" style={{color: "#c084fc"}}></i>
+                <i
+                  className="fas fa-laptop-code"
+                  style={{color: "#c084fc"}}
+                ></i>
                 <span>C++ &amp; DSA</span>
               </div>
               <div className="floating-badge badge-bottom-right">

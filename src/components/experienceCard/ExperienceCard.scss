@@ -8,8 +8,7 @@
   border: 1px solid $lightBorder1;
   overflow: hidden;
   backdrop-filter: blur(8px);
-  transition: transform 0.3s ease, border-color 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .experience-card-dark {

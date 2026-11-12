@@ -47,11 +47,12 @@ export default function Bento() {
                 Write code humans love reading, and computers love executing.
               </h3>
               <p className="bento-text">
-                For me, software engineering isn't about memorizing trivia — it's
-                about the joy of turning an ambiguous problem into an elegant,
-                modular solution. I care deeply about edge-case handling,
-                meaningful variable naming, and making sure that whoever reads my
-                code six months from now smiles instead of sighs.
+                For me, software engineering isn't about memorizing trivia —
+                it's about the joy of turning an ambiguous problem into an
+                elegant, modular solution. I care deeply about edge-case
+                handling, meaningful variable naming, and making sure that
+                whoever reads my code six months from now smiles instead of
+                sighs.
               </p>
               <div className="bento-tags-row">
                 <span className="bento-pill">✨ Clean Architecture</span>
@@ -88,9 +89,9 @@ export default function Bento() {
               <h3 className="bento-card-heading">NCC 'A' Discipline</h3>
               <p className="bento-text">
                 National Cadet Corps training instilled personal discipline,
-                punctuality, and pride in detail. In software, that translates into
-                clean git commits, thorough testing, and showing up ready to do the
-                heavy lifting.
+                punctuality, and pride in detail. In software, that translates
+                into clean git commits, thorough testing, and showing up ready
+                to do the heavy lifting.
               </p>
             </div>
           </div>
@@ -111,19 +112,25 @@ export default function Bento() {
 
             <div className="terminal-tabs">
               <button
-                className={`terminal-tab ${activeTab === "profile" ? "active" : ""}`}
+                className={`terminal-tab ${
+                  activeTab === "profile" ? "active" : ""
+                }`}
                 onClick={() => setActiveTab("profile")}
               >
                 profile.json
               </button>
               <button
-                className={`terminal-tab ${activeTab === "stack" ? "active" : ""}`}
+                className={`terminal-tab ${
+                  activeTab === "stack" ? "active" : ""
+                }`}
                 onClick={() => setActiveTab("stack")}
               >
                 stack.ts
               </button>
               <button
-                className={`terminal-tab ${activeTab === "rituals" ? "active" : ""}`}
+                className={`terminal-tab ${
+                  activeTab === "rituals" ? "active" : ""
+                }`}
                 onClick={() => setActiveTab("rituals")}
               >
                 rituals.sh
@@ -135,12 +142,34 @@ export default function Bento() {
                 <pre>
                   <code>
                     <span className="c-key">"developer"</span>: {"{\n"}
-                    {"  "}<span className="c-prop">"name"</span>: <span className="c-str">"Anjali Tiwari"</span>,{"\n"}
-                    {"  "}<span className="c-prop">"pronouns"</span>: <span className="c-str">"she/her"</span>,{"\n"}
-                    {"  "}<span className="c-prop">"role"</span>: <span className="c-str">"Software Developer &amp; AI Builder"</span>,{"\n"}
-                    {"  "}<span className="c-prop">"education"</span>: <span className="c-str">"B.Tech CSE @ IILM University (CGPA 9.3)"</span>,{"\n"}
-                    {"  "}<span className="c-prop">"openFor"</span>: [<span className="c-str">"SDE Internships"</span>, <span className="c-str">"AI/ML Roles"</span>],{"\n"}
-                    {"  "}<span className="c-prop">"passions"</span>: [<span className="c-str">"Deep Learning 🐘"</span>, <span className="c-str">"Clean C++"</span>, <span className="c-str">"Basketball 🏀"</span>, <span className="c-str">"Chai ☕"</span>]{"\n"}
+                    {"  "}
+                    <span className="c-prop">"name"</span>:{" "}
+                    <span className="c-str">"Anjali Tiwari"</span>,{"\n"}
+                    {"  "}
+                    <span className="c-prop">"pronouns"</span>:{" "}
+                    <span className="c-str">"she/her"</span>,{"\n"}
+                    {"  "}
+                    <span className="c-prop">"role"</span>:{" "}
+                    <span className="c-str">
+                      "Software Developer &amp; AI Builder"
+                    </span>
+                    ,{"\n"}
+                    {"  "}
+                    <span className="c-prop">"education"</span>:{" "}
+                    <span className="c-str">
+                      "B.Tech CSE @ IILM University (CGPA 9.3)"
+                    </span>
+                    ,{"\n"}
+                    {"  "}
+                    <span className="c-prop">"openFor"</span>: [
+                    <span className="c-str">"SDE Internships"</span>,{" "}
+                    <span className="c-str">"AI/ML Roles"</span>],{"\n"}
+                    {"  "}
+                    <span className="c-prop">"passions"</span>: [
+                    <span className="c-str">"Deep Learning 🐘"</span>,{" "}
+                    <span className="c-str">"Clean C++"</span>,{" "}
+                    <span className="c-str">"Basketball 🏀"</span>,{" "}
+                    <span className="c-str">"Chai ☕"</span>]{"\n"}
                     {"}"}
                   </code>
                 </pre>
@@ -149,12 +178,31 @@ export default function Bento() {
               {activeTab === "stack" && (
                 <pre>
                   <code>
-                    <span className="c-key">interface</span> <span className="c-func">DevToolkit</span> {"{\n"}
-                    {"  "}languages: [<span className="c-str">"C"</span>, <span className="c-str">"C++"</span>, <span className="c-str">"Python"</span>, <span className="c-str">"Java"</span>, <span className="c-str">"JavaScript"</span>];{"\n"}
-                    {"  "}ai_cv: [<span className="c-str">"OpenCV"</span>, <span className="c-str">"TensorFlow"</span>, <span className="c-str">"Keras"</span>, <span className="c-str">"CNN"</span>, <span className="c-str">"NumPy"</span>];{"\n"}
-                    {"  "}backend: [<span className="c-str">"Flask REST APIs"</span>, <span className="c-str">"MySQL"</span>, <span className="c-str">"Binary File I/O"</span>];{"\n"}
-                    {"  "}foundations: [<span className="c-str">"DSA"</span>, <span className="c-str">"OOP"</span>, <span className="c-str">"SDLC"</span>, <span className="c-str">"Git/GitHub"</span>];{"\n"}
-                    {"  "}editorVibe: <span className="c-str">"VS Code · Rosé Pine &amp; Tokyo Night 🌙"</span>;{"\n"}
+                    <span className="c-key">interface</span>{" "}
+                    <span className="c-func">DevToolkit</span> {"{\n"}
+                    {"  "}languages: [<span className="c-str">"C"</span>,{" "}
+                    <span className="c-str">"C++"</span>,{" "}
+                    <span className="c-str">"Python"</span>,{" "}
+                    <span className="c-str">"Java"</span>,{" "}
+                    <span className="c-str">"JavaScript"</span>];{"\n"}
+                    {"  "}ai_cv: [<span className="c-str">"OpenCV"</span>,{" "}
+                    <span className="c-str">"TensorFlow"</span>,{" "}
+                    <span className="c-str">"Keras"</span>,{" "}
+                    <span className="c-str">"CNN"</span>,{" "}
+                    <span className="c-str">"NumPy"</span>];{"\n"}
+                    {"  "}backend: [
+                    <span className="c-str">"Flask REST APIs"</span>,{" "}
+                    <span className="c-str">"MySQL"</span>,{" "}
+                    <span className="c-str">"Binary File I/O"</span>];{"\n"}
+                    {"  "}foundations: [<span className="c-str">"DSA"</span>,{" "}
+                    <span className="c-str">"OOP"</span>,{" "}
+                    <span className="c-str">"SDLC"</span>,{" "}
+                    <span className="c-str">"Git/GitHub"</span>];{"\n"}
+                    {"  "}editorVibe:{" "}
+                    <span className="c-str">
+                      "VS Code · Rosé Pine &amp; Tokyo Night 🌙"
+                    </span>
+                    ;{"\n"}
                     {"}"}
                   </code>
                 </pre>
@@ -163,12 +211,19 @@ export default function Bento() {
               {activeTab === "rituals" && (
                 <pre>
                   <code>
-                    <span className="c-com">#!/bin/bash</span>{"\n"}
-                    <span className="c-key">while</span> [ <span className="c-str">"$curiosity"</span> = <span className="c-str">"infinite"</span> ]; <span className="c-key">do</span>{"\n"}
+                    <span className="c-com">#!/bin/bash</span>
+                    {"\n"}
+                    <span className="c-key">while</span> [{" "}
+                    <span className="c-str">"$curiosity"</span> ={" "}
+                    <span className="c-str">"infinite"</span> ];{" "}
+                    <span className="c-key">do</span>
+                    {"\n"}
                     {"  "}brew_masala_chai --hot{"\n"}
                     {"  "}solve_leetcode_dsa --target c_plus_plus{"\n"}
                     {"  "}train_cv_model --dataset wildlife_elephants{"\n"}
-                    {"  "}push_clean_commits --with-love <span className="c-str">"🌸✨"</span>{"\n"}
+                    {"  "}push_clean_commits --with-love{" "}
+                    <span className="c-str">"🌸✨"</span>
+                    {"\n"}
                     <span className="c-key">done</span>
                   </code>
                 </pre>
@@ -212,4 +267,3 @@ export default function Bento() {
     </div>
   );
 }
-
