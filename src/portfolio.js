@@ -219,31 +219,38 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Academic & Featured Projects",
-  subtitle:
-    "INTELLIGENT SYSTEMS, DEEP LEARNING & LOW-LEVEL SOFTWARE ARCHITECTURE",
+  title: "Academic Projects",
+  subtitle: "ACADEMIC PROJECTS FOCUSED ON AI, MACHINE LEARNING, AND SOFTWARE DEVELOPMENT",
   projects: [
     {
       image: process.env.PUBLIC_URL + "/project-images/doctor-appointment.svg",
-      projectName: "AI-Based Doctor-Patient Appointment System",
+      projectName: "AI Hospital Recommendation System",
       projectDesc:
-        "An intelligent healthcare triage and booking platform connecting patients with specialized doctors. Features machine learning symptom classification to automatically match medical specialties and conflict-free real-time calendar reservations. Built using Python, Machine Learning heuristics, Flask REST APIs, and MySQL.",
+        "An AI-based system that helps recommend suitable hospitals/doctors based on patient needs and inputs, improving accessibility and decision-making in healthcare. Built with a focus on intelligent matching, practical usability, and efficient appointment/recommendation flow.",
       footerLink: [
         {
           name: "View on GitHub",
           url: "https://github.com/anjalitiwarics27-coder/Ai_based_Doctor_Patient_Appointment"
+        },
+        {
+          name: "View Live",
+          url: "#"
         }
       ]
     },
     {
-      image: process.env.PUBLIC_URL + "/company-images/wildlife.svg",
-      projectName: "Unique Elephant ID Recognition System with CNNs",
+      image: require("./assets/images/skill.svg"),
+      projectName: "AI-Based Student Performance Prediction and Personalized Learning Recommendation",
       projectDesc:
-        "Developed during research internship at the Wildlife Institute of India. Deep learning computer vision pipeline using OpenCV and TensorFlow/Keras to identify individual wild elephants from camera-trap imagery via biometric ear venation and contour patterns, enabling humane non-invasive wildlife conservation.",
+        "A machine learning-based academic project that predicts student performance and provides personalized learning recommendations to support better learning outcomes. Designed to analyze student data, identify performance patterns, and suggest relevant improvement paths.",
       footerLink: [
         {
-          name: "View Profile",
-          url: "https://github.com/anjalitiwarics27-coder"
+          name: "View on GitHub",
+          url: "https://github.com/Preeti-2327/AI-BASED-STUDENT-PERFORMANCE-PREDICTION-AND-PERSONALIZED-LEARNING-RECOMMENDATION"
+        },
+        {
+          name: "View Live",
+          url: "#"
         }
       ]
     },
@@ -251,7 +258,7 @@ const bigProjects = {
       image: process.env.PUBLIC_URL + "/project-images/library.svg",
       projectName: "Library Management System (AI-Enhanced)",
       projectDesc:
-        "Built a robust, dependency-free Library Management System in pure C with custom binary file I/O for transactional reliability. Integrated a smart genre and metadata recommendation heuristic suggesting alternative titles when books are out of stock.",
+        "A library management system with core record management features and AI-enhanced support for smarter book suggestions when a searched title is unavailable. Focused on organized data handling, usability, and efficient library operations.",
       footerLink: [
         {
           name: "View on GitHub",
