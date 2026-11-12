@@ -107,14 +107,14 @@ export default function Greeting() {
                 <span>C++ &amp; DSA</span>
               </div>
               <div className="floating-badge badge-bottom-right">
-                <span>⚡</span>
+                <span>🏆</span>
                 <span>Grade 'O' Full Stack</span>
               </div>
 
               {/* Sub-card Vibe tag */}
               <div className="avatar-vibe-tag">
                 <span className="pulse-dot"></span>
-                <span>🎧 Coding Mode · Chai ☕ &amp; Lo-Fi Beats</span>
+                <span>⚡ Coding Mode • Chai &amp; Lo-Fi Beats</span>
               </div>
             </div>
           </div>
