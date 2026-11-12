@@ -131,6 +131,21 @@
   border-color: rgba(255, 255, 255, 0.12);
 }
 
+.contact-cta-photo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.contact-cta-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 18%;
+  border: 1px solid $lightBorder1;
+}
+
 .contact-cta-badge {
   display: none;
 }

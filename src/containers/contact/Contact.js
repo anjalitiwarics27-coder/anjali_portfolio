@@ -87,6 +87,13 @@ export default function Contact() {
               isDark ? "contact-cta-card dark-mode" : "contact-cta-card"
             }
           >
+            <div className="contact-cta-photo-wrap">
+              <img
+                src={require("../../assets/images/Anjali_image.jpeg")}
+                alt="Anjali Tiwari"
+                className="contact-cta-photo"
+              />
+            </div>
             <h3 className="contact-cta-title">Send a message</h3>
             <p className="contact-cta-desc">I usually reply within 24 hours.</p>
             <div className="contact-cta-social">
