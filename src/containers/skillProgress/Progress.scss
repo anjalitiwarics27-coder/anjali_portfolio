@@ -73,7 +73,6 @@
     transparent 100%
   );
   transform: skewX(-20deg);
-  animation: prof-shine 2.8s ease infinite;
 }
 
 @keyframes prof-grow {
@@ -82,17 +81,7 @@
   }
 }
 
-@keyframes prof-shine {
-  0% {
-    left: -70%;
-  }
-  60% {
-    left: 130%;
-  }
-  100% {
-    left: 130%;
-  }
-}
+
 
 .skill {
   line-height: 1.5;

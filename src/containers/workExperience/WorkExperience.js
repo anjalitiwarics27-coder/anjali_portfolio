@@ -2,7 +2,6 @@ import React, {useContext} from "react";
 import "./WorkExperience.scss";
 import ExperienceCard from "../../components/experienceCard/ExperienceCard";
 import {workExperiences} from "../../portfolio";
-import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function WorkExperience() {
@@ -10,8 +9,7 @@ export default function WorkExperience() {
   if (workExperiences.display) {
     return (
       <div id="experience">
-        <Fade bottom duration={1000} distance="20px">
-          <div className="experience-container" id="workExperience">
+        <div className="experience-container" id="workExperience">
             <div>
               <h1 className="experience-heading">
                 Ex<span className="exp-gradient-text">periences</span> 💼
@@ -38,8 +36,7 @@ export default function WorkExperience() {
                 })}
               </div>
             </div>
-          </div>
-        </Fade>
+        </div>
       </div>
     );
   }

@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
 import "./Footer.scss";
-import {Fade} from "react-reveal";
 import emoji from "react-easy-emoji";
 import StyleContext from "../../contexts/StyleContext";
 import {greeting} from "../../portfolio";
@@ -9,8 +8,7 @@ import SocialMedia from "../socialMedia/SocialMedia";
 export default function Footer() {
   const {isDark} = useContext(StyleContext);
   return (
-    <Fade bottom duration={1000} distance="5px">
-      <div className="footer-div">
+          <div className="footer-div">
         <div className="footer-inner">
           <a href="/" className="footer-logo">
             <span className="grey-color"> &lt;</span>
@@ -40,6 +38,5 @@ export default function Footer() {
           </p>
         </div>
       </div>
-    </Fade>
   );
 }

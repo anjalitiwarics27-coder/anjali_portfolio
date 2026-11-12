@@ -2,7 +2,6 @@ import React, {useState, useEffect, useContext} from "react";
 import "./Blog.scss";
 import BlogCard from "../../components/blogCard/BlogCard";
 import {blogSection} from "../../portfolio";
-import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 export default function Blogs() {
   const {isDark} = useContext(StyleContext);
@@ -48,8 +47,7 @@ export default function Blogs() {
     return null;
   }
   return (
-    <Fade bottom duration={1000} distance="20px">
-      <div className="main" id="blogs">
+          <div className="main" id="blogs">
         <div className="blog-header">
           <h1 className="blog-header-text">{blogSection.title}</h1>
           <p
@@ -94,6 +92,5 @@ export default function Blogs() {
           </div>
         </div>
       </div>
-    </Fade>
   );
 }
