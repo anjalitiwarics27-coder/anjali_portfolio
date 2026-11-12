@@ -220,7 +220,8 @@ const openSource = {
 
 const bigProjects = {
   title: "Academic Projects",
-  subtitle: "ACADEMIC PROJECTS FOCUSED ON AI, MACHINE LEARNING, AND SOFTWARE DEVELOPMENT",
+  subtitle:
+    "ACADEMIC PROJECTS FOCUSED ON AI, MACHINE LEARNING, AND SOFTWARE DEVELOPMENT",
   projects: [
     {
       image: process.env.PUBLIC_URL + "/project-images/doctor-appointment.svg",
@@ -240,7 +241,8 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/skill.svg"),
-      projectName: "AI-Based Student Performance Prediction and Personalized Learning Recommendation",
+      projectName:
+        "AI-Based Student Performance Prediction and Personalized Learning Recommendation",
       projectDesc:
         "A machine learning-based academic project that predicts student performance and provides personalized learning recommendations to support better learning outcomes. Designed to analyze student data, identify performance patterns, and suggest relevant improvement paths.",
       footerLink: [
