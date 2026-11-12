@@ -267,8 +267,8 @@ const achievementSection = {
       title: "Web Development Certification",
       subtitle:
         "Certified by EduSkills (March 2026). Hands-on proficiency in modern responsive web technologies, HTML, CSS, JavaScript, and full-stack concepts.",
-      image: require("./assets/images/jsFramework.svg"),
-      imageAlt: "Web Development Certification",
+      image: require("./assets/images/pwaLogo.webp"),
+      imageAlt: "EduSkills Certification",
       footerLink: [
         {
           name: "EduSkills AICTE",
@@ -280,8 +280,8 @@ const achievementSection = {
       title: "MySQL Basics Certification",
       subtitle:
         "Certified by Great Learning (November 2024). Mastery in relational database design, indexing, normalization, and complex SQL queries.",
-      image: require("./assets/images/skill.svg"),
-      imageAlt: "MySQL Basics Certification",
+      image: require("./assets/images/codeInLogo.webp"),
+      imageAlt: "Great Learning Logo",
       footerLink: [
         {
           name: "Great Learning",
@@ -293,8 +293,8 @@ const achievementSection = {
       title: "Java Programming Certification",
       subtitle:
         "Certified by Great Learning (August 2024). Comprehensive coverage of Object-Oriented Programming (OOP), Data Structures, and Core Java development.",
-      image: require("./assets/images/programmer.svg"),
-      imageAlt: "Java Programming Certification",
+      image: require("./assets/images/codeInLogo.webp"),
+      imageAlt: "Great Learning Logo",
       footerLink: [
         {
           name: "Great Learning",
@@ -306,8 +306,8 @@ const achievementSection = {
       title: "C & Python Programming Certifications",
       subtitle:
         "Certified in C Programming Language (March 2024) and Python Programming (July 2023) by Infosys / Springboard.",
-      image: require("./assets/images/developerActivity.svg"),
-      imageAlt: "C & Python Programming Certifications",
+      image: require("./assets/images/googleAssistantLogo.webp"),
+      imageAlt: "Infosys Springboard Logo",
       footerLink: [
         {
           name: "Infosys Springboard",
@@ -319,15 +319,15 @@ const achievementSection = {
       title: "NCC 'A' Certificate Holder",
       subtitle:
         "Earned NCC 'A' Certificate (2019–2020). Demonstrated discipline, teamwork, physical fitness, and leadership through active national cadet corps activities.",
-      image: require("./assets/images/pwaLogo.webp"),
-      imageAlt: "NCC 'A' Certificate",
+      image: require("./assets/images/googleAssistantLogo.webp"),
+      imageAlt: "NCC Logo",
       footerLink: []
     },
     {
       title: "House Captain & Basketball Team Captain",
       subtitle:
         "Nilgiri House Captain and Basketball Team Captain (2022–2023). Led athletic teams, organized major competitive events, and fostered collaborative team culture.",
-      image: require("./assets/images/manOnTable.svg"),
+      image: require("./assets/images/googleAssistantLogo.webp"),
       imageAlt: "Leadership & Sports",
       footerLink: []
     }
