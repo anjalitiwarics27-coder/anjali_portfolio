@@ -16,14 +16,53 @@ const ERR = {
   requestFailedMedium:
     "The request to Medium didn't succeed. Check if Medium username in your .env file is correct."
 };
-if (USE_GITHUB_DATA === "true") {
-  if (GITHUB_USERNAME === undefined) {
-    throw new Error(ERR.noUserName);
-  }
 
-  console.log(`Fetching profile data for ${GITHUB_USERNAME}`);
-  var data = JSON.stringify({
-    query: `
+function writeJson(filePath, content, label) {
+  fs.writeFile(filePath, content, function (err) {
+    if (err) {
+      console.log(`Failed to write ${label}:`, err.message || err);
+      return;
+    }
+    console.log(`saved file to ${filePath}`);
+  });
+}
+
+function safeGetJson(options, {label, onSuccess, onFail}) {
+  const req = https.request(options, res => {
+    let body = "";
+    console.log(`${label} statusCode: ${res.statusCode}`);
+
+    res.on("data", d => {
+      body += d;
+    });
+
+    res.on("end", () => {
+      if (res.statusCode !== 200) {
+        console.log(onFail || `${label} request failed with status ${res.statusCode}`);
+        return;
+      }
+      try {
+        onSuccess(body);
+      } catch (err) {
+        console.log(`${label} processing failed:`, err.message || err);
+      }
+    });
+  });
+
+  req.on("error", error => {
+    console.log(`${label} request error:`, error.message || error);
+  });
+
+  return req;
+}
+
+if (USE_GITHUB_DATA === "true") {
+  if (!GITHUB_USERNAME) {
+    console.log(ERR.noUserName);
+  } else {
+    console.log(`Fetching profile data for ${GITHUB_USERNAME}`);
+    var queryData = JSON.stringify({
+      query: `
 {
   user(login:"${GITHUB_USERNAME}") { 
     name
@@ -55,46 +94,35 @@ if (USE_GITHUB_DATA === "true") {
     }
 }
 `
-  });
-  const default_options = {
-    hostname: "api.github.com",
-    path: "/graphql",
-    port: 443,
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${GITHUB_TOKEN}`,
-      "User-Agent": "Node"
-    }
-  };
+    });
 
-  const req = https.request(default_options, res => {
-    let data = "";
+    const default_options = {
+      hostname: "api.github.com",
+      path: "/graphql",
+      port: 443,
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "User-Agent": "Node"
+      }
+    };
 
-    console.log(`statusCode: ${res.statusCode}`);
-    if (res.statusCode !== 200) {
-      throw new Error(ERR.requestFailed);
+    if (GITHUB_TOKEN) {
+      default_options.headers.Authorization = `Bearer ${GITHUB_TOKEN}`;
     }
 
-    res.on("data", d => {
-      data += d;
+    const req = safeGetJson(default_options, {
+      label: "GitHub",
+      onFail: ERR.requestFailed,
+      onSuccess: data => writeJson("./public/profile.json", data, "GitHub profile")
     });
-    res.on("end", () => {
-      fs.writeFile("./public/profile.json", data, function (err) {
-        if (err) return console.log(err);
-        console.log("saved file to public/profile.json");
-      });
-    });
-  });
 
-  req.on("error", error => {
-    throw error;
-  });
-
-  req.write(data);
-  req.end();
+    req.write(queryData);
+    req.end();
+  }
 }
 
-if (MEDIUM_USERNAME !== undefined) {
+if (MEDIUM_USERNAME) {
   console.log(`Fetching Medium blogs data for ${MEDIUM_USERNAME}`);
   const options = {
     hostname: "api.rss2json.com",
@@ -103,27 +131,10 @@ if (MEDIUM_USERNAME !== undefined) {
     method: "GET"
   };
 
-  const req = https.request(options, res => {
-    let mediumData = "";
-
-    console.log(`statusCode: ${res.statusCode}`);
-    if (res.statusCode !== 200) {
-      throw new Error(ERR.requestMediumFailed);
-    }
-
-    res.on("data", d => {
-      mediumData += d;
-    });
-    res.on("end", () => {
-      fs.writeFile("./public/blogs.json", mediumData, function (err) {
-        if (err) return console.log(err);
-        console.log("saved file to public/blogs.json");
-      });
-    });
-  });
-
-  req.on("error", error => {
-    throw error;
+  const req = safeGetJson(options, {
+    label: "Medium",
+    onFail: ERR.requestFailedMedium,
+    onSuccess: mediumData => writeJson("./public/blogs.json", mediumData, "Medium blogs")
   });
 
   req.end();
