@@ -15,8 +15,8 @@ export default function Skills() {
         <div className="skills-image-div">
           <div className="skills-image-card">
             <img
-              alt="Developer working illustration"
-              src={require("../../assets/images/developerActivity.svg")}
+              alt="Skills"
+              src={process.env.PUBLIC_URL + "/proficiency/image.png"}
             ></img>
           </div>
         </div>

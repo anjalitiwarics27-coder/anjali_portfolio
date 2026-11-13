@@ -19,14 +19,10 @@ export default function Skills() {
           <div className="skills-image-div">
             <div className="skills-image-glow"></div>
             <div className="skills-image-card">
-              {illustration.animated ? (
-                <DisplayLottie animationData={codingPerson} />
-              ) : (
-                <img
-                  alt="Man Working"
-                  src={require("../../assets/images/developerActivity.svg")}
-                ></img>
-              )}
+              <img
+                alt="Skills"
+                src={process.env.PUBLIC_URL + "/proficiency/image.png"}
+              ></img>
             </div>
           </div>
         </Fade>
