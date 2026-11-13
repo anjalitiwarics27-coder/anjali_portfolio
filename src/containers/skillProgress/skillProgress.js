@@ -48,7 +48,10 @@ export default function StackProgress() {
 
         <div className="skills-image">
           <div className="skills-image-card">
-            <img alt="Skills" src={require("../../assets/images/skill.svg")} />
+            <img
+              alt="Proficiency"
+              src={process.env.PUBLIC_URL + "/proficiency/image.png"}
+            />
           </div>
         </div>
       </div>
